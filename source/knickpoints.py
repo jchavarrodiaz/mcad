@@ -178,4 +178,4 @@ def main(env):
 
 
 if __name__ == '__main__':
-    main(env=False)
+    main(env=True)
