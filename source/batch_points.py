@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 
 import os
+import numpy
 import arcpy
 import arcgisscripting
 
 
-def merge_points(knickpoints, hydropoints, folder_out, gdb):
+def merge_points(knickpoints, hydropoints, folder_out, gdb, zone):
     arcpy.env.overwriteOutput = True
     gp = arcgisscripting.create()
     gp.CheckOutExtension('spatial')
@@ -27,16 +28,25 @@ def merge_points(knickpoints, hydropoints, folder_out, gdb):
     arcpy.CopyFeatures_management(os.path.join(temp_folder, 'pre_batchpoints.shp'), os.path.join(gdb, 'BatchPoints'))
     arcpy.DeleteField_management(os.path.join(gdb, 'BatchPoints'), [x.name for x in field_obj_list][2:])
 
+    arcpy.MakeFeatureLayer_management(os.path.join(gdb, 'BatchPoints'), 'lyr_temp')
+    total_points = int(arcpy.GetCount_management('lyr_temp').getOutput(0))
+
     arcpy.AddField_management(os.path.join(gdb, 'BatchPoints'), 'Name', 'TEXT', 9, "", "", 'Name', 'NULLABLE', 'REQUIRED')
     arcpy.AddField_management(os.path.join(gdb, 'BatchPoints'), 'Descript', 'TEXT', 9, "", "", 'Descript', 'NULLABLE', 'REQUIRED')
     arcpy.AddField_management(os.path.join(gdb, 'BatchPoints'), 'BatchDone', 'SHORT', 9, "", "", 'BatchDone', 'NULLABLE', 'REQUIRED')
     arcpy.AddField_management(os.path.join(gdb, 'BatchPoints'), 'SnapOn', 'SHORT', 9, "", "", 'SnapOn', 'NULLABLE', 'REQUIRED')
     arcpy.AddField_management(os.path.join(gdb, 'BatchPoints'), 'SrcType', 'TEXT', 9, "", "", 'SrcType', 'NULLABLE', 'REQUIRED')
 
-    expression = 'random.randint(1100000, 9900000)'  # TODO: Check if of total numbers of features dont overpass the total of random numbers
-    code_block = 'import random'
+    start_code = {1: 1000000,
+                  2: 2000000,
+                  3: 3000000,
+                  4: 4000000,
+                  5: 5000000}
 
-    arcpy.CalculateField_management(os.path.join(gdb, 'BatchPoints'), 'Name', expression, 'PYTHON', code_block)
+    nstart = start_code[zone]
+
+    arcpy.CalculateField_management(in_table=os.path.join(gdb, 'BatchPoints'), field="Name", expression="!OBJECTID! + {}".format(nstart), expression_type="PYTHON", code_block="")
+    # arcpy.CalculateField_management(os.path.join(gdb, 'BatchPoints'), 'Name', expression, 'PYTHON', code_block)
     arcpy.CalculateField_management(os.path.join(gdb, 'BatchPoints'), 'Descript', "\"subwateshed\"", 'PYTHON')
     arcpy.CalculateField_management(os.path.join(gdb, 'BatchPoints'), 'BatchDone', 0, 'PYTHON')
     arcpy.CalculateField_management(os.path.join(gdb, 'BatchPoints'), 'SnapOn', 1, 'PYTHON')
@@ -51,14 +61,15 @@ def main(env):
         gdb_path = arcpy.GetParameterAsText(0)
         topog_points = arcpy.GetParameterAsText(1)
         hydro_points = arcpy.GetParameterAsText(2)
-        folder = os.path.dirname(gdb_path)
+        hydro_zone = arcpy.GetParameter(3)
     else:
-        gdb_path = r'C:/temp/results/UTTL.gdb'
-        topog_points = r'C:/temp/results/UTTL.gdb/knickpoints'
-        hydro_points = r'C:/temp/results/UTTL.gdb/hydro_points'
-        folder = os.path.dirname(gdb_path)
+        gdb_path = r'E:\AH_02\UTTL.gdb'
+        topog_points = r'E:\AH_02\UTTL.gdb\knickpoints'
+        hydro_points = r'E:\AH_02\UTTL.gdb\hydro_points'
+        hydro_zone = 2
 
-    merge_points(knickpoints=topog_points, hydropoints=hydro_points, folder_out=folder, gdb=gdb_path)
+    folder = os.path.dirname(gdb_path)
+    merge_points(knickpoints=topog_points, hydropoints=hydro_points, folder_out=folder, gdb=gdb_path, zone=hydro_zone)
 
 
 if __name__ == '__main__':

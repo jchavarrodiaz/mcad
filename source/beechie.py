@@ -68,8 +68,8 @@ def run_mrvbf(temp, t_slope=16., tv=0.4, tr=0.35, p_slope=4.0, p=3.0):
 
 def export_data_from_saga(temp, out_grid, gdb, show):
     gp = arcgisscripting.create()
-    mde_out = '-GRIDS:{}/MRVBF.sgrd'.format(temp)
-    out_tif = '-FILE:{}/MRVBF.tif'.format(temp)
+    mde_out = '-GRIDS:{}/{}.sgrd'.format(temp, out_grid)
+    out_tif = '-FILE:{}/{}.tif'.format(temp, out_grid)
     command = ['saga_cmd', 'io_gdal', '2', mde_out, out_tif]
     gp.AddMessage(command)
     p1 = subprocess.Popen(command, stdout=subprocess.PIPE)
@@ -78,7 +78,7 @@ def export_data_from_saga(temp, out_grid, gdb, show):
 
     arcpy.env.workspace = gdb
     arcpy.env.overwriteOutput = True
-    arcpy.CopyRaster_management(in_raster='{}/MRVBF.tif'.format(temp), out_rasterdataset='{}/{}'.format(gdb, out_grid))
+    arcpy.CopyRaster_management(in_raster='{}/{}.tif'.format(temp, out_grid), out_rasterdataset='{}/{}'.format(gdb, out_grid))
 
     arcpy.MakeRasterLayer_management(in_raster=r'{}/{}'.format(gdb, out_grid), out_rasterlayer='mrvbf_index')
     arcpy.gp.RasterCalculator_sa('Con("mrvbf_index"  != 0, 1, SetNull("mrvbf_index","mrvbf_index","VALUE = 0"))', r'{}/{}_reclass'.format(gdb, out_grid))
@@ -213,8 +213,8 @@ def main(env):
         par9 = gp.GetParameterAsText(12)
         par10 = gp.GetParameterAsText(13)
     else:
-        mdt_file = 'D:/Work/POTENTIAL_ARCPY/TEST/data/dem_test.tif'
-        gdb_path = 'D:/Work/POTENTIAL_ARCPY/TEST/results/UTTL.gdb'
+        mdt_file = r'E:\AH_02\data\srtm_col_3116.tif'
+        gdb_path = r'E:\AH_02\UTTL.gdb'
         name_out = 'mrvbf'
         par1 = 8
         par2 = 0.4
@@ -222,11 +222,11 @@ def main(env):
         par4 = 4
         par5 = 3
         show = True
-        par6 = 'D:/Work/POTENTIAL_ARCPY/TEST/results/UTTL.gdb/Drain_UTTL'
-        par7 = 'D:/Work/POTENTIAL_ARCPY/TEST/results/UTTL.gdb/UTTL_basins'
-        par8 = 'D:/Work/POTENTIAL_ARCPY/TEST/results/UTTL.gdb/fac'
-        par9 = r'D:\Work\POTENTIAL_ARCPY\TEST\data\Qmax_Regional_UPME_CTr.tif'
-        par10 = r'D:\Work\POTENTIAL_ARCPY\TEST\data\Qmax_Regional_UPME_qTr.tif'
+        par6 = r'E:\AH_02\UTTL.gdb\Drain_UTTL'
+        par7 = r'E:\AH_02\UTTL.gdb\UTTL_Basins'
+        par8 = r'E:\AH_02\UTTL.gdb\fac'
+        par9 = r'E:\AH_02\data\Qmax_Regional_UPME_CTr.tif'
+        par10 = r'E:\AH_02\data\Qmax_Regional_UPME_qTr.tif'
 
     gp.AddMessage('Making temps folders')
     temp_folder = '{}/temp'.format(os.path.dirname(os.path.abspath(gdb_path)))
@@ -245,4 +245,4 @@ def main(env):
 
 if __name__ == "__main__":
     # temp()
-    main(env=True)
+    main(env=False)
