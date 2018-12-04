@@ -85,6 +85,14 @@ def dem_conditioning(dem, folder, gdb, threshold, show, epsg, drain_network=None
     gp.AddMessage('Processing Drainage Line ...')
     ArcHydroTools.DrainageLineProcessing(os.path.join(gdb_path, r'strlnk'), os.path.join(gdb_path, 'fdr'), os.path.join(gdb_path, 'drainage_line'))
 
+    # Removing all geometries whose length is less than the pixel size
+    arcpy.MakeFeatureLayer_management(os.path.join(gdb_path, 'drainage_line'), 'drain')
+    arcpy.SelectLayerByAttribute_management('drain', "NEW_SELECTION", ' "Shape_Length" > 30 ')
+    arcpy.CopyFeatures_management("drain", os.path.join(folder, 'temp', 'drain_line.shp'))
+    arcpy.DeleteFeatures_management(os.path.join(gdb_path, 'drainage_line'))
+    # arcpy.Delete_management(os.path.join(gdb_path, 'drainage_line'), '')
+    arcpy.CopyFeatures_management(os.path.join(folder, 'temp', 'drain_line.shp'), os.path.join(gdb_path, 'drainage_line'))
+
     gp.SetProgressorPosition(90)
     gp.AddMessage('Processing Adjoint Catchment ...')
     ArcHydroTools.AdjointCatchment(os.path.join(gdb_path, r'drainage_line'), os.path.join(gdb_path, 'catchment'), os.path.join(gdb_path, 'adjoint_catchment'))
@@ -98,7 +106,7 @@ def dem_conditioning(dem, folder, gdb, threshold, show, epsg, drain_network=None
 
 
 def main(env):
-    arcpy.env.overwriteOutput = True
+
     arcpy.CheckOutExtension('Spatial')
 
     if env:
@@ -113,18 +121,21 @@ def main(env):
         hydro_zone = arcpy.GetParameterAsText(6)
     else:
         # from console
-        dem_path = 'C:/temp/data/guarapas.tif'
-        folder_out_path = 'C:/temp/results'
+        dem_path = r'E:\jchavarro\OSPA\mcad_test\data\dem_test.tif'
+        folder_out_path = r'E:\jchavarro\OSPA\mcad_test\results'
         gdb_name = 'UTTL'
         drain_burning = ''
         threshold = 324  # TODO: estimate the threshold from the scale and resolution of dem
-        show_layers = True
+        show_layers = False
         hydro_zone = 3116
 
-    # create gdb
-    arcpy.CreateFileGDB_management(folder_out_path, '{}.gdb'.format(gdb_name))
+    arcpy.env.workspace = folder_out_path
+    arcpy.env.overwriteOutput = True
+    if not os.path.exists(os.path.join(folder_out_path, '{}.gdb'.format(gdb_name))):
+        arcpy.CreateFileGDB_management(folder_out_path, '{}.gdb'.format(gdb_name))
+
     dem_conditioning(dem=dem_path, folder=folder_out_path, gdb=gdb_name, threshold=threshold, show=show_layers, epsg=hydro_zone, drain_network=drain_burning)
 
 
 if __name__ == '__main__':
-    main(env=True)
+    main(env=False)

@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca60032c-5cf9-4feb-9e17-c8547ec341d9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/MCAD.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MCAD.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MCAD.tbx" beforeDir="false" afterPath="$PROJECT_DIR$/MCAD.tbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/batch_points.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/batch_points.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/beechie.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/beechie.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/knickpoints.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/knickpoints.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/aconditioning_dem.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/aconditioning_dem.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,85 +14,35 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="645169215">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="-952800323">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="gitignore" value="1" />
-          <entry key="py" value="7" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="7" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="py" value="581" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="Python" value="581" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.vcs.git.usages" />
-    </session>
-  </component>
   <component name="FavoritesManager">
     <favorites_list name="MCAD" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/source/aconditioning_dem.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="199">
+              <caret line="83" column="32" lean-forward="true" selection-start-line="83" selection-start-column="32" selection-end-line="83" selection-end-column="32" />
+              <folding>
+                <element signature="e#25#47#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/hydro_points.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-31" />
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/knickpoints.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2975">
-              <caret line="180" column="17" selection-start-line="180" selection-start-column="17" selection-end-line="180" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/source/segmentation.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-163">
-              <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/flores.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/beechie.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3536">
-              <caret line="216" column="39" selection-start-line="216" selection-start-column="19" selection-end-line="216" selection-end-column="39" />
-              <folding>
-                <element signature="e#0#22#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="384">
+              <caret line="50" column="25" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -100,8 +50,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/batch_points.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1105">
-              <caret line="68" column="22" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
+            <state relative-caret-position="156">
+              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
               <folding>
                 <element signature="e#25#34#0" expanded="true" />
               </folding>
@@ -109,7 +59,21 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/segmentation.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-32">
+              <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>rand</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
@@ -122,6 +86,7 @@
         <option value="$PROJECT_DIR$/source/knickpoints.py" />
         <option value="$PROJECT_DIR$/source/beechie.py" />
         <option value="$PROJECT_DIR$/source/batch_points.py" />
+        <option value="$PROJECT_DIR$/source/aconditioning_dem.py" />
       </list>
     </option>
   </component>
@@ -140,12 +105,12 @@
         <subPane>
           <expand>
             <path>
-              <item name="MCAD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCAD" type="462c0819:PsiDirectoryNode" />
+              <item name="mcad" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mcad" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="MCAD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCAD" type="462c0819:PsiDirectoryNode" />
+              <item name="mcad" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mcad" type="462c0819:PsiDirectoryNode" />
               <item name="source" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -157,7 +122,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Python" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -171,7 +136,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.batch_points">
+  <component name="RunManager" selected="Python.aconditioning_dem">
+    <configuration name="aconditioning_dem" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MCAD" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/aconditioning_dem.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="batch_points" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MCAD" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -239,9 +225,11 @@
       <item itemvalue="Python.knickpoints" />
       <item itemvalue="Python.beechie" />
       <item itemvalue="Python.batch_points" />
+      <item itemvalue="Python.aconditioning_dem" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.aconditioning_dem" />
         <item itemvalue="Python.batch_points" />
         <item itemvalue="Python.beechie" />
         <item itemvalue="Python.knickpoints" />
@@ -262,20 +250,21 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
+    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49433962" visible="true" weight="0.19898605" />
-      <window_info id="Structure" order="1" sideWeight="0.50566036" side_tool="true" visible="true" weight="0.19898605" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49289098" weight="0.19872814" />
+      <window_info id="Structure" order="1" sideWeight="0.507109" side_tool="true" weight="0.19872814" />
       <window_info id="Favorites" order="2" sideWeight="0.50054765" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32978722" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.35106382" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32938388" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3507109" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" weight="0.32968238" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.29521278" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32968238" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.2950237" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32978722" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -308,54 +297,65 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>exp = '&quot;!OBJECTID! + {}&quot; '.format(nstart)</expression-string>
+        <expression-string>os.path.join(gdb_path, 'drainage_line')</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>arcpy.CalculateField_management(in_table=&quot;BatchPoints&quot;, field=&quot;Name&quot;, expression=exp, expression_type=&quot;PYTHON_9.3&quot;, code_block=&quot;&quot;)</expression-string>
+        <expression-string>arcpy.CopyFeatures_management(&quot;drain&quot;, os.path.join(gdb_path, 'drainage_line_fixed_2'))</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>exp = '&quot;!OBJECTID! + {}&quot;.format(nstart)'</expression-string>
+        <expression-string>arcpy.SelectLayerByAttribute_management('drain2', &quot;NEW_SELECTION&quot;, ' &quot;Shape_Length&quot; &gt; 30 ')</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>exp</expression-string>
+        <expression-string>arcpy.SelectLayerByAttribute_management('drain', &quot;NEW_SELECTION&quot;, ' &quot;Shape_Length&quot; &gt; 30 ')</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>exp = &quot;!OBJECTID! + {}&quot;.format(nstart)</expression-string>
+        <expression-string>arcpy.MakeFeatureLayer_management(os.path.join(gdb_path, 'drainage_line'), 'drain2')</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>== &quot;!OBJECTID! + 2000000&quot;</expression-string>
+        <expression-string>arcpy.MakeFeatureLayer_management(os.path.join(gdb_path, 'drainage_line'), 'drain')</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>&quot;!OBJECTID! + {}&quot;.format(nstart) == &quot;!OBJECTID! + 2000000&quot;</expression-string>
+        <expression-string>arcpy.CopyFeatures_management(&quot;drain&quot;, os.path.join(gdb_path, 'drainage_line_fixed'))</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>&quot;!OBJECTID! + {}&quot;.format(nstart)</expression-string>
+        <expression-string>arcpy.SelectLayerByAttribute_management('drain', &quot;SUBSET_SELECTION&quot;, ' &quot;Shape_Length&quot; &gt; 30 ')</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>'&quot;!OBJECTID! + {}&quot;'.format(nstart)</expression-string>
+        <expression-string>gdb_path</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -365,26 +365,25 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://C:/Program Files (x86)/ArcGIS/Desktop10.5/arcpy/arcpy/management.py">
+    <entry file="file://C:/Program Files (x86)/ArcGIS/Desktop10.5/arcpy/arcpy/management.py" />
+    <entry file="file://$PROJECT_DIR$/source/cluster.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="2585" selection-start-line="2585" selection-end-line="2585" />
+        <state relative-caret-position="-2073">
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/knickpoints.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2975">
-          <caret line="180" column="17" selection-start-line="180" selection-start-column="17" selection-end-line="180" selection-end-column="17" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/source/add_attribute.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/source/flores.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/source/beechie.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3536">
+        <state relative-caret-position="469">
           <caret line="216" column="39" selection-start-line="216" selection-start-column="19" selection-end-line="216" selection-end-column="39" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
@@ -392,10 +391,15 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/source/hydro_points.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-31" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/source/batch_points.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1105">
-          <caret line="68" column="22" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
+        <state relative-caret-position="156">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
           <folding>
             <element signature="e#25#34#0" expanded="true" />
           </folding>
@@ -404,8 +408,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/segmentation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-163">
+        <state relative-caret-position="-32">
           <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/knickpoints.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="50" column="25" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files (x86)/ArcGIS/Desktop10.4/arcpy/arcpy/management.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="2334" selection-start-line="2334" selection-end-line="2334" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/aconditioning_dem.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="83" column="32" lean-forward="true" selection-start-line="83" selection-start-column="32" selection-end-line="83" selection-end-column="32" />
+          <folding>
+            <element signature="e#25#47#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
