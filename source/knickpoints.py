@@ -172,7 +172,7 @@ def knickpoints_filter(folder, gdb, knick):
     if not os.path.join(folder, '{}.gdb'.format(gdb)):
         arcpy.CreateFileGDB_management(folder, '{}.gdb'.format(gdb))
 
-    arcpy.MakeFeatureLayer_management(os.path.join(folder, gdb, knick), 'knick')
+    arcpy.MakeFeatureLayer_management(os.path.join(folder, '{}.gdb'.format(gdb), knick), 'knick')
     arcpy.SelectLayerByAttribute_management('knick', 'NEW_SELECTION', '"OrdemAnom" < 2')
     arcpy.CopyFeatures_management('knick', os.path.join(folder, gdb, '{}_filter'.format(knick)))
 
@@ -189,13 +189,13 @@ def main(env):
         gdb_name = gp.GetParameterAsText(5)
         epsg = gp.GetParameterAsText(6)
     else:
-        dem_path = r'E:\AH_02\data\strm_MC.tif'
-        equidistant = 200
+        dem_path = r'E:\jchavarro\OSPA\AH_03\data\srtm_orinoco_3117.tif'
+        equidistant = 1200
         knick_name = r'knickpoints'
-        drainage_line_path = r'E:\AH_02\UTTL.gdb\drainage_line'
-        folder = r'E:\AH_02'
+        drainage_line_path = r'E:\jchavarro\OSPA\AH_03\results\UTTL.gdb\drainage_line'
+        folder = r'E:\jchavarro\OSPA\AH_03\results'
         gdb_name = r'UTTL'
-        epsg = 3116
+        epsg = 3117
 
     knickpoints_extract(raw_dem=dem_path,
                         shape_out=knick_name,
@@ -208,4 +208,4 @@ def main(env):
 
 
 if __name__ == '__main__':
-    main(env=True)
+    main(env=False)

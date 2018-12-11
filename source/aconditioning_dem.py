@@ -37,6 +37,8 @@ def dem_conditioning(dem, folder, gdb, threshold, show, epsg, fill, drain_networ
         gp.SetProgressorPosition(10)
         gp.AddMessage('Terrain Pre-processing ... Fill')
         ArcHydroTools.FillSinks(dem_work_path, os.path.join(gdb_path, r'fill'))
+    else:
+        arcpy.CopyRaster_management(dem_work_path, os.path.join(gdb_path, r'fill'))
 
     if drain_network:
         gp.AddMessage('DEM Reconditioning ...')
@@ -133,13 +135,13 @@ def main(env):
         make_fill = arcpy.GetParameterAsText(7)
     else:
         # from console
-        dem_path = r'E:\jchavarro\OSPA\mcad_test\data\dem_test.tif'
-        folder_out_path = r'E:\jchavarro\OSPA\mcad_test\results'
+        dem_path = r'E:\jchavarro\OSPA\AH_03\data\HydroDEM_Orinoco_3117.tif'
+        folder_out_path = r'E:\jchavarro\OSPA\AH_03\results'
         gdb_name = 'UTTL'
         drain_burning = ''
         threshold = 324  # TODO: estimate the threshold from the scale and resolution of dem
         show_layers = False
-        hydro_zone = 3116
+        hydro_zone = 3117
         make_fill = False
 
     arcpy.env.workspace = folder_out_path
@@ -152,4 +154,4 @@ def main(env):
 
 
 if __name__ == '__main__':
-    main(env=True)
+    main(env=False)

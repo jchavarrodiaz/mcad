@@ -64,12 +64,12 @@ def main(env):
         gdb_name = arcpy.GetParameterAsText(4)
         hydro_zone = arcpy.GetParameterAsText(5)
     else:
-        drain_network = r'C:/temp/results/UTTL.gdb/drainage_line'
-        drain_points = r'C:/temp/results/UTTL.gdb/drainage_point'
+        drain_network = ''
+        drain_points = r'E:\jchavarro\OSPA\AH_03\results\UTTL.gdb\drainage_point'
         show_layers = False
-        folder_out_path = os.path.join('C:/temp/results')
+        folder_out_path = os.path.join(r'E:\jchavarro\OSPA\AH_03\results')
         gdb_name = 'UTTL'
-        hydro_zone = 3116
+        hydro_zone = 3117
 
     if drain_network != '':
         extract_hydro_points(drain=drain_network,
@@ -88,4 +88,4 @@ def main(env):
 
 
 if __name__ == '__main__':
-    main(env=True)
+    main(env=False)
