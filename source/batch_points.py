@@ -19,23 +19,28 @@ def merge_points(knickpoints, hydropoints, folder_out, gdb, zone):
         arcpy.CreateFileGDB_management(gdb)
 
     arcpy.Merge_management([knickpoints, hydropoints], os.path.join(temp_folder, 'merge_points.shp'))
-    arcpy.MakeFeatureLayer_management(os.path.join(temp_folder, 'merge_points.shp'), 'lyr')
-    arcpy.SelectLayerByAttribute_management('lyr', 'NEW_SELECTION', '"OrdemAnom" < 2')
-    arcpy.CopyFeatures_management('lyr', os.path.join(temp_folder, 'pre_batchpoints.shp'))
-    
-    field_obj_list = arcpy.ListFields(os.path.join(temp_folder, 'pre_batchpoints.shp'))
+    # arcpy.MakeFeatureLayer_management(os.path.join(temp_folder, 'merge_points.shp'), 'lyr')
+    # arcpy.SelectLayerByAttribute_management('lyr', 'NEW_SELECTION', '"OrdemAnom" < 2')
+    # arcpy.CopyFeatures_management('lyr', os.path.join(temp_folder, 'pre_batchpoints.shp'))
 
-    arcpy.CopyFeatures_management(os.path.join(temp_folder, 'pre_batchpoints.shp'), os.path.join(gdb, 'BatchPoints'))
+    field_obj_list = arcpy.ListFields(os.path.join(temp_folder, 'merge_points.shp'))
+
+    arcpy.CopyFeatures_management(os.path.join(temp_folder, 'merge_points.shp'), os.path.join(gdb, 'BatchPoints'))
     arcpy.DeleteField_management(os.path.join(gdb, 'BatchPoints'), [x.name for x in field_obj_list][2:])
 
     arcpy.MakeFeatureLayer_management(os.path.join(gdb, 'BatchPoints'), 'lyr_temp')
     total_points = int(arcpy.GetCount_management('lyr_temp').getOutput(0))
 
-    arcpy.AddField_management(os.path.join(gdb, 'BatchPoints'), 'Name', 'TEXT', 9, "", "", 'Name', 'NULLABLE', 'REQUIRED')
-    arcpy.AddField_management(os.path.join(gdb, 'BatchPoints'), 'Descript', 'TEXT', 9, "", "", 'Descript', 'NULLABLE', 'REQUIRED')
-    arcpy.AddField_management(os.path.join(gdb, 'BatchPoints'), 'BatchDone', 'SHORT', 9, "", "", 'BatchDone', 'NULLABLE', 'REQUIRED')
-    arcpy.AddField_management(os.path.join(gdb, 'BatchPoints'), 'SnapOn', 'SHORT', 9, "", "", 'SnapOn', 'NULLABLE', 'REQUIRED')
-    arcpy.AddField_management(os.path.join(gdb, 'BatchPoints'), 'SrcType', 'TEXT', 9, "", "", 'SrcType', 'NULLABLE', 'REQUIRED')
+    arcpy.AddField_management(os.path.join(gdb, 'BatchPoints'),
+                              'Name', 'TEXT', 9, "", "", 'Name', 'NULLABLE', 'REQUIRED')
+    arcpy.AddField_management(os.path.join(gdb, 'BatchPoints'),
+                              'Descript', 'TEXT', 9, "", "", 'Descript', 'NULLABLE', 'REQUIRED')
+    arcpy.AddField_management(os.path.join(gdb, 'BatchPoints'),
+                              'BatchDone', 'SHORT', 9, "", "", 'BatchDone', 'NULLABLE', 'REQUIRED')
+    arcpy.AddField_management(os.path.join(gdb, 'BatchPoints'),
+                              'SnapOn', 'SHORT', 9, "", "", 'SnapOn', 'NULLABLE', 'REQUIRED')
+    arcpy.AddField_management(os.path.join(gdb, 'BatchPoints'),
+                              'SrcType', 'TEXT', 9, "", "", 'SrcType', 'NULLABLE', 'REQUIRED')
 
     start_code = {1: 1000000,
                   2: 2000000,
@@ -45,7 +50,9 @@ def merge_points(knickpoints, hydropoints, folder_out, gdb, zone):
 
     nstart = start_code[zone]
 
-    arcpy.CalculateField_management(in_table=os.path.join(gdb, 'BatchPoints'), field="Name", expression="!OBJECTID! + {}".format(nstart), expression_type="PYTHON", code_block="")
+    arcpy.CalculateField_management(in_table=os.path.join(gdb, 'BatchPoints'), field="Name",
+                                    expression="!OBJECTID! + {}".format(nstart), expression_type="PYTHON",
+                                    code_block="")
     # arcpy.CalculateField_management(os.path.join(gdb, 'BatchPoints'), 'Name', expression, 'PYTHON', code_block)
     arcpy.CalculateField_management(os.path.join(gdb, 'BatchPoints'), 'Descript', "\"subwateshed\"", 'PYTHON')
     arcpy.CalculateField_management(os.path.join(gdb, 'BatchPoints'), 'BatchDone', 0, 'PYTHON')

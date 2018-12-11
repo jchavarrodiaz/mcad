@@ -22,8 +22,10 @@ def extract_hydro_points(drain, show, folder, gdb):
                              output_type='POINT')
 
     arcpy.AddXY_management(in_features=os.path.join(folder, 'temp', 'hydro_multi_points.shp'))
-    arcpy.DeleteIdentical_management(in_dataset=os.path.join(folder, 'temp', 'hydro_multi_points.shp'), fields="POINT_X;POINT_Y", xy_tolerance="", z_tolerance="0")
-    arcpy.MultipartToSinglepart_management(in_features=os.path.join(folder, 'temp', 'hydro_multi_points.shp'), out_feature_class=os.path.join(folder, '{}.gdb'.format(gdb), 'hydro_points'))
+    arcpy.DeleteIdentical_management(in_dataset=os.path.join(folder, 'temp', 'hydro_multi_points.shp'),
+                                     fields="POINT_X;POINT_Y", xy_tolerance="", z_tolerance="0")
+    arcpy.MultipartToSinglepart_management(in_features=os.path.join(folder, 'temp', 'hydro_multi_points.shp'),
+                                           out_feature_class=os.path.join(folder, '{}.gdb'.format(gdb), 'hydro_points'))
 
     gp.AddMessage('Finish')
 
@@ -42,7 +44,8 @@ def extract_drainage_points(drain_points, epsg, gdb, folder, show):
 
     spatial_ref = arcpy.Describe(drain_points).spatialReference
 
-    arcpy.Project_management(in_dataset=drain_points, out_dataset=os.path.join(folder, '{}.gdb'.format(gdb), 'hydro_points'),
+    arcpy.Project_management(in_dataset=drain_points, out_dataset=os.path.join(folder, '{}.gdb'.format(gdb),
+                                                                               'hydro_points'),
                              out_coor_system=epsg,
                              transform_method="",
                              in_coor_system=spatial_ref,
@@ -52,7 +55,7 @@ def extract_drainage_points(drain_points, epsg, gdb, folder, show):
 
 
 def main(env):
-
+    gp = arcgisscripting.create()
     if env:
         drain_network = arcpy.GetParameterAsText(0)
         drain_points = arcpy.GetParameterAsText(1)
@@ -68,8 +71,20 @@ def main(env):
         gdb_name = 'UTTL'
         hydro_zone = 3116
 
-    # extract_hydro_points(drain=drain_network, show=show_layers, folder=folder_out_path, gdb=gdb_name)
-    extract_drainage_points(drain_points=drain_points, epsg=hydro_zone, gdb=gdb_name, folder=folder_out_path, show=show_layers)
+    if drain_network != '':
+        extract_hydro_points(drain=drain_network,
+                             show=show_layers,
+                             folder=folder_out_path,
+                             gdb=gdb_name)
+    elif drain_points != '':
+        extract_drainage_points(drain_points=drain_points,
+                                epsg=hydro_zone,
+                                gdb=gdb_name,
+                                folder=folder_out_path,
+                                show=show_layers)
+    else:
+        gp.SetProgressor('default',
+                         'You must specify at least one of both: a drain network or a drainage points vertex')
 
 
 if __name__ == '__main__':
