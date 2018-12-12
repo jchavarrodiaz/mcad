@@ -65,9 +65,9 @@ def main(env):
         hydro_zone = arcpy.GetParameterAsText(5)
     else:
         drain_network = ''
-        drain_points = r'E:\jchavarro\OSPA\AH_03\results\UTTL.gdb\drainage_point'
+        drain_points = r'D:\AH_03\results\UTTL.gdb\drainage_point'
         show_layers = False
-        folder_out_path = os.path.join(r'E:\jchavarro\OSPA\AH_03\results')
+        folder_out_path = os.path.join(r'D:\AH_03\results')
         gdb_name = 'UTTL'
         hydro_zone = 3117
 

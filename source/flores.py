@@ -46,12 +46,15 @@ def flores_class(table, workspace):
 
     df_table.to_csv(os.path.join(folder, r'temp/TableFloresClassification.csv'), index_label='Name')
     arcpy.Delete_management(os.path.join(workspace, 'TableFloresClassificationJoin'))
-    arcpy.TableToTable_conversion(os.path.join(folder, r'temp/TableFloresClassification.csv'), workspace, 'TableFloresClassificationJoin')
+    arcpy.TableToTable_conversion(os.path.join(folder, r'temp/TableFloresClassification.csv'), workspace,
+                                  'TableFloresClassificationJoin')
 
     expression = 'str(!Name!)'
     code_block = ''
-    arcpy.AddField_management(os.path.join(workspace, 'TableFloresClassificationJoin'), 'Code', 'TEXT', '', '', '10', '', 'NULLABLE', 'NON_REQUIRED', '')
-    arcpy.CalculateField_management(os.path.join(workspace, 'TableFloresClassificationJoin'), 'Code', expression, 'PYTHON', code_block)
+    arcpy.AddField_management(os.path.join(workspace, 'TableFloresClassificationJoin'),
+                              'Code', 'TEXT', '', '', '10', '', 'NULLABLE', 'NON_REQUIRED', '')
+    arcpy.CalculateField_management(os.path.join(workspace, 'TableFloresClassificationJoin'),
+                                    'Code', expression, 'PYTHON', code_block)
 
     return os.path.join(workspace, 'TableFloresClassificationJoin')
 
@@ -66,31 +69,35 @@ def slope_calc(batch_point, workspace, drain, epsg, dem, uttl):
     folder = os.path.dirname(workspace)
     UTTL_Basins = uttl.split('/')[-1]
 
-    ArcHydroTools.Construct3DLine(in_line2d_features=drain, in_rawdem_raster=dem, out_line3d_features=os.path.join(workspace, 'Drain3D'))
-    ArcHydroTools.Smooth3DLine(in_line3d_features=os.path.join(workspace, 'Drain3D'),
-                               out_smoothline3d_features=os.path.join(workspace, 'SmoothDrain3D_UTM'))
+    # ArcHydroTools.Construct3DLine(in_line2d_features=drain, in_rawdem_raster=dem, out_line3d_features=os.path.join(workspace, 'Drain3D'))
+    # ArcHydroTools.Smooth3DLine(in_line3d_features=os.path.join(workspace, 'Drain3D'),
+    #                            out_smoothline3d_features=os.path.join(workspace, 'SmoothDrain3D_UTM'))
+    #
+    # transform_in = gp.Describe(os.path.join(workspace, 'SmoothDrain3D_UTM'))
+    # ref_in = transform_in.SpatialReference
+    # arcpy.Project_management(in_dataset=os.path.join(workspace, 'SmoothDrain3D_UTM'),
+    #                          out_dataset=os.path.join(workspace, 'SmoothDrain3D'),
+    #                          out_coor_system=epsg,
+    #                          transform_method="",
+    #                          in_coor_system=ref_in,
+    #                          preserve_shape="NO_PRESERVE_SHAPE", max_deviation="", vertical="NO_VERTICAL")
 
-    transform_in = gp.Describe(os.path.join(workspace, 'SmoothDrain3D_UTM'))
-    ref_in = transform_in.SpatialReference
-    arcpy.Project_management(in_dataset=os.path.join(workspace, 'SmoothDrain3D_UTM'),
-                             out_dataset=os.path.join(workspace, 'SmoothDrain3D'),
-                             out_coor_system=epsg,
-                             transform_method="",
-                             in_coor_system=ref_in,
-                             preserve_shape="NO_PRESERVE_SHAPE", max_deviation="", vertical="NO_VERTICAL")
+    arcpy.SplitLineAtPoint_management(os.path.join(workspace, 'SmoothDrain3D'), batch_point,
+                                      os.path.join(folder, r'Temp/SmoothDrain3DSplit.shp'))
 
-    arcpy.SplitLineAtPoint_management(os.path.join(workspace, 'SmoothDrain3D'), batch_point, os.path.join(folder, r'Temp/SmoothDrain3DSplit.shp'))
-
-    arcpy.AddField_management(os.path.join(folder, r'Temp/SmoothDrain3DSplit.shp'), 'Slope', 'FLOAT', 6, 4, "", 'Slope', 'NULLABLE', 'REQUIRED')
+    arcpy.AddField_management(os.path.join(folder, r'Temp/SmoothDrain3DSplit.shp'), 'Slope',
+                              'FLOAT', 6, 4, "", 'Slope', 'NULLABLE', 'REQUIRED')
 
     arcpy.AddGeometryAttributes_management(os.path.join(folder, r'Temp/SmoothDrain3DSplit.shp'), 'LENGTH')
     arcpy.AddGeometryAttributes_management(os.path.join(folder, r'Temp/SmoothDrain3DSplit.shp'), 'LINE_START_MID_END')
-    arcpy.CalculateField_management(os.path.join(folder, r'Temp/SmoothDrain3DSplit.shp'), 'Slope', '( !START_Z! - !END_Z! ) / !LENGTH!', 'PYTHON', '#')
+    arcpy.CalculateField_management(os.path.join(folder, r'Temp/SmoothDrain3DSplit.shp'),
+                                    'Slope', '( !START_Z! - !END_Z! ) / !LENGTH!', 'PYTHON', '#')
 
     keep_field = ['FID', 'Shape', 'LENGTH', 'START_Z', 'END_Z', 'Slope']
     fields = [x.name for x in arcpy.ListFields(os.path.join(folder, r'Temp/SmoothDrain3DSplit.shp'))]
 
-    arcpy.DeleteField_management(os.path.join(folder, r'Temp/SmoothDrain3DSplit.shp'), [x for x in fields if x not in keep_field])
+    arcpy.DeleteField_management(os.path.join(folder, r'Temp/SmoothDrain3DSplit.shp'),
+                                 [x for x in fields if x not in keep_field])
 
     arcpy.MakeFeatureLayer_management(os.path.join(workspace, UTTL_Basins), 'UTTL_Basins')
     arcpy.MakeFeatureLayer_management(os.path.join(folder, r'Temp/SmoothDrain3DSplit.shp'), 'SmoothDrain3DSplit')
@@ -106,7 +113,8 @@ def slope_calc(batch_point, workspace, drain, epsg, dem, uttl):
                               statistics_fields='LENGTH MAX;Shape_area MAX;Slope MAX;START_Z MAX;END_Z MIN',
                               multi_part='MULTI_PART', unsplit_lines='DISSOLVE_LINES')
 
-    arcpy.CopyFeatures_management(os.path.join(folder, r'Temp/SD3DSIDissolve.shp'), os.path.join(workspace, r'Drain_UTTL'))
+    arcpy.CopyFeatures_management(os.path.join(folder, r'Temp/SD3DSIDissolve.shp'), os.path.join(workspace,
+                                                                                                 r'Drain_UTTL'))
 
     table2csv(os.path.join(folder, r'Temp/SD3DSIDissolve.shp'), os.path.join(folder, r'Temp/TableSlope.csv'))
     df_slope = pd.read_csv(os.path.join(folder, r'Temp/TableSlope.csv'), index_col='Name')
@@ -177,7 +185,8 @@ def flores(workspace, uttl):
 
     field_obj_list = arcpy.ListFields(os.path.join(folder, r'temp/UTTL_Flores.shp'))
     keep_field = ['FID', 'Shape', 'Name', 'Areas_Km2', 'Slope', 'Flores']
-    arcpy.DeleteField_management(os.path.join(folder, r'temp/UTTL_Flores.shp'), [x.name for x in field_obj_list if x.name not in keep_field])
+    arcpy.DeleteField_management(os.path.join(folder, r'temp/UTTL_Flores.shp'),
+                                 [x.name for x in field_obj_list if x.name not in keep_field])
 
     arcpy.CopyFeatures_management(os.path.join(folder, r'temp/UTTL_Flores.shp'), os.path.join(workspace, 'UTTL_Basins'))
     arcpy.Delete_management(os.path.join(folder, r'temp/UTTL_Flores.shp'))
@@ -200,18 +209,28 @@ def main(env):
         hydro_zone = arcpy.GetParameterAsText(5)
         fac_path = arcpy.GetParameterAsText(6)
     else:
-        gdb_path = r'D:/Work/POTENTIAL_ARCPY/TEST/results/UTTL.gdb'
-        dem_path = r'D:/Work/POTENTIAL_ARCPY/TEST/data/dem_test.tif'
-        batchpoints_path = r'D:/Work/POTENTIAL_ARCPY/TEST/results/UTTL.gdb/BatchPoints'
-        drain_network_path = r'D:/Work/POTENTIAL_ARCPY/TEST/results/UTTL.gdb/drainage_line'
-        hydro_zone = 3116
-        uttl = r'D:/Work/POTENTIAL_ARCPY/TEST/results/UTTL.gdb/UTTL_Basins'
-        fac_path = r'D:/Work/POTENTIAL_ARCPY/TEST/results/UTTL.gdb/fac'
+        gdb_path = r'C:\Users\jchav\AH_03\results\UTTL.gdb'
+        dem_path = r'C:\Users\jchav\AH_03\data\HydroDEM_Orinoco_plus_500_3117.tif'
+        batchpoints_path = r'C:\Users\jchav\AH_03\results\UTTL.gdb\BatchPoints'
+        drain_network_path = r'C:\Users\jchav\AH_03\results\UTTL.gdb\drainage_line'
+        hydro_zone = 3117
+        uttl = r'C:\Users\jchav\AH_03\results\UTTL.gdb\UTTL_Basins'
+        fac_path = r'C:\Users\jchav\AH_03\results\UTTL.gdb\fac'
 
-    slope_calc(batch_point=batchpoints_path, workspace=gdb_path, drain=drain_network_path, epsg=hydro_zone, dem=dem_path, uttl=uttl)
-    areas_watershed(workspace=gdb_path, fac=fac_path, uttl=uttl)
-    flores(workspace=gdb_path, uttl=uttl)
+    slope_calc(batch_point=batchpoints_path,
+               workspace=gdb_path,
+               drain=drain_network_path,
+               epsg=hydro_zone,
+               dem=dem_path,
+               uttl=uttl)
+
+    areas_watershed(workspace=gdb_path,
+                    fac=fac_path,
+                    uttl=uttl)
+
+    flores(workspace=gdb_path,
+           uttl=uttl)
 
 
 if __name__ == '__main__':
-    main(env=True)
+    main(env=False)

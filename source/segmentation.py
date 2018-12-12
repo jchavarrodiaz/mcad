@@ -43,10 +43,10 @@ def main(env):
         batchpoints_path = arcpy.GetParameterAsText(3)
         basins_name = arcpy.GetParameterAsText(4)
     else:
-        gdb_path = r'E:\TEST\results\UTTL.gdb'
-        fdr_path = r'E:\TEST\results\UTTL.gdb\fdr'
-        stream_path = r'E:\TEST\results\UTTL.gdb\Str'
-        batchpoints_path = r'E:\TEST\results\UTTL.gdb\BatchPoints'
+        gdb_path = r'D:\AH_03\results\UTTL.gdb'
+        fdr_path = r'D:\AH_03\results\UTTL.gdb\fdr'
+        stream_path = r'D:\AH_03\results\UTTL.gdb\Str'
+        batchpoints_path = r'D:\AH_03\results\UTTL.gdb\BatchPoints'
         basins_name = 'UTTL_Basins'
 
     uttl_maker(flow_grid=fdr_path,
@@ -57,4 +57,10 @@ def main(env):
 
 
 if __name__ == '__main__':
+    '''
+    This tool only can run in the ArcMap-ArcGis
+    Check if the data is storage in disk C://
+    Load the Fdr and Str rasters in Table of Content
+    Before run, save the mxd project
+    '''
     main(env=True)

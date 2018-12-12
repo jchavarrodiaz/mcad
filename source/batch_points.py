@@ -19,9 +19,6 @@ def merge_points(knickpoints, hydropoints, folder_out, gdb, zone):
         arcpy.CreateFileGDB_management(gdb)
 
     arcpy.Merge_management([knickpoints, hydropoints], os.path.join(temp_folder, 'merge_points.shp'))
-    # arcpy.MakeFeatureLayer_management(os.path.join(temp_folder, 'merge_points.shp'), 'lyr')
-    # arcpy.SelectLayerByAttribute_management('lyr', 'NEW_SELECTION', '"OrdemAnom" < 2')
-    # arcpy.CopyFeatures_management('lyr', os.path.join(temp_folder, 'pre_batchpoints.shp'))
 
     field_obj_list = arcpy.ListFields(os.path.join(temp_folder, 'merge_points.shp'))
 
@@ -29,7 +26,6 @@ def merge_points(knickpoints, hydropoints, folder_out, gdb, zone):
     arcpy.DeleteField_management(os.path.join(gdb, 'BatchPoints'), [x.name for x in field_obj_list][2:])
 
     arcpy.MakeFeatureLayer_management(os.path.join(gdb, 'BatchPoints'), 'lyr_temp')
-    total_points = int(arcpy.GetCount_management('lyr_temp').getOutput(0))
 
     arcpy.AddField_management(os.path.join(gdb, 'BatchPoints'),
                               'Name', 'TEXT', 9, "", "", 'Name', 'NULLABLE', 'REQUIRED')
@@ -53,7 +49,6 @@ def merge_points(knickpoints, hydropoints, folder_out, gdb, zone):
     arcpy.CalculateField_management(in_table=os.path.join(gdb, 'BatchPoints'), field="Name",
                                     expression="!OBJECTID! + {}".format(nstart), expression_type="PYTHON",
                                     code_block="")
-    # arcpy.CalculateField_management(os.path.join(gdb, 'BatchPoints'), 'Name', expression, 'PYTHON', code_block)
     arcpy.CalculateField_management(os.path.join(gdb, 'BatchPoints'), 'Descript', "\"subwateshed\"", 'PYTHON')
     arcpy.CalculateField_management(os.path.join(gdb, 'BatchPoints'), 'BatchDone', 0, 'PYTHON')
     arcpy.CalculateField_management(os.path.join(gdb, 'BatchPoints'), 'SnapOn', 1, 'PYTHON')
@@ -70,14 +65,14 @@ def main(env):
         hydro_points = arcpy.GetParameterAsText(2)
         hydro_zone = arcpy.GetParameter(3)
     else:
-        gdb_path = r'E:\AH_02\UTTL.gdb'
-        topog_points = r'E:\AH_02\UTTL.gdb\knickpoints'
-        hydro_points = r'E:\AH_02\UTTL.gdb\hydro_points'
-        hydro_zone = 2
+        gdb_path = r'D:\AH_03\results\UTTL.gdb'
+        topog_points = r'D:\AH_03\results\UTTL.gdb\knickpoints_filter'
+        hydro_points = r'D:\AH_03\results\UTTL.gdb\hydro_points'
+        hydro_zone = 3
 
     folder = os.path.dirname(gdb_path)
     merge_points(knickpoints=topog_points, hydropoints=hydro_points, folder_out=folder, gdb=gdb_path, zone=hydro_zone)
 
 
 if __name__ == '__main__':
-    main(env=True)
+    main(env=False)

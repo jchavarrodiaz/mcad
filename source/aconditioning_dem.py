@@ -28,10 +28,7 @@ def dem_conditioning(dem, folder, gdb, threshold, show, epsg, fill, drain_networ
     gp.SetProgressor('step', 'starting pre-processing digital terrain model...')
     gp.SetProgressorPosition(0)
 
-    arcpy.ProjectRaster_management(dem, os.path.join(folder, 'temp\dem_temp.tif'), 4686, 'BILINEAR', '#', '#', '#', '#')
-    arcpy.ProjectRaster_management(os.path.join(folder, 'temp\dem_temp.tif'), os.path.join(folder, 'temp\work_dem.tif'),
-                                   epsg, 'BILINEAR', '#', '#', '#', '#')
-    dem_work_path = os.path.join(folder, 'temp\work_dem.tif')
+    dem_work_path = dem
 
     if fill:
         gp.SetProgressorPosition(10)
@@ -135,8 +132,8 @@ def main(env):
         make_fill = arcpy.GetParameterAsText(7)
     else:
         # from console
-        dem_path = r'E:\jchavarro\OSPA\AH_03\data\HydroDEM_Orinoco_3117.tif'
-        folder_out_path = r'E:\jchavarro\OSPA\AH_03\results'
+        dem_path = r'D:\AH_03\data\HydroDEM_Orinoco_plus_500_3117.tif'
+        folder_out_path = r'D:\AH_03\results'
         gdb_name = 'UTTL'
         drain_burning = ''
         threshold = 324  # TODO: estimate the threshold from the scale and resolution of dem
