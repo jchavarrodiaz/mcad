@@ -7,6 +7,7 @@ from arcpy import env
 from arcpy.sa import *
 
 import pandas as pd
+import numpy as np
 
 
 def add_layer(layer):
@@ -78,18 +79,16 @@ def export_data_from_saga(temp, out_grid, gdb, show):
 
     arcpy.env.workspace = gdb
     arcpy.env.overwriteOutput = True
-    arcpy.CopyRaster_management(in_raster='{}/{}.tif'.format(temp, out_grid), out_rasterdataset='{}/{}'.format(gdb, out_grid))
+    arcpy.CopyRaster_management(in_raster='{}/{}.tif'.format(temp, out_grid),
+                                out_rasterdataset='{}/{}'.format(gdb, out_grid))
 
     arcpy.MakeRasterLayer_management(in_raster=r'{}/{}'.format(gdb, out_grid), out_rasterlayer='mrvbf_index')
-    arcpy.gp.RasterCalculator_sa('Con("mrvbf_index"  != 0, 1, SetNull("mrvbf_index","mrvbf_index","VALUE = 0"))', r'{}/{}_reclass'.format(gdb, out_grid))
-
-    # TODO: Setup add_layer func
-    # if show:
-    #     add_layer(arcpy.MakeRasterLayer_management(in_raster=r'{}/{}'.format(gdb, out_grid), out_rasterlayer='mrvbf_index'))
+    arcpy.gp.RasterCalculator_sa('Con("mrvbf_index"  != 0, 1, SetNull("mrvbf_index","mrvbf_index","VALUE = 0"))',
+                                 r'{}/{}_reclass'.format(gdb, out_grid))
 
 
 def fn_beechie(raster, drain_shape, uttl_basins, fac, workspace, CTr, qTr):
-    '''
+    """
     Esta funcion estima el grado de confinamiento
     correspondiente a un tramo de corriente a
     partir de los resultados del modulo MRVBF
@@ -99,7 +98,7 @@ def fn_beechie(raster, drain_shape, uttl_basins, fac, workspace, CTr, qTr):
     :param drain_shape: Es el vectorial de los tramos de corriente de las UTTL
     :param uttl_basins: Es el vectorial de las UTTL
     :return: Agrega al shape de UTTL un atributo llamado w_valley, area_MRVBF, WB, DoC
-    '''
+    """
     gp = arcgisscripting.create()
     gp.CheckOutExtension("Spatial")
     arcpy.env.workspace = '{}'.format(os.path.dirname(os.path.abspath(workspace)))
@@ -109,16 +108,20 @@ def fn_beechie(raster, drain_shape, uttl_basins, fac, workspace, CTr, qTr):
 
     gp.AddMessage('Wvalley width ... ')
 
-    arcpy.gp.RasterCalculator_sa('Con(IsNull("{}"),0,"{}")'.format(raster, raster), '{}/temp_mrvbf.tif'.format(temp_folder))
-    arcpy.gp.ZonalStatisticsAsTable_sa(uttl_basins, "Name", '{}/temp_mrvbf.tif'.format(temp_folder), '{}/mrvbf_stats'.format(temp_folder), "NODATA", "SUM")
+    arcpy.gp.RasterCalculator_sa('Con(IsNull("{}"),0,"{}")'.format(raster, raster),
+                                 '{}/temp_mrvbf.tif'.format(temp_folder))
+    arcpy.gp.ZonalStatisticsAsTable_sa(uttl_basins, "Name", '{}/temp_mrvbf.tif'.format(temp_folder),
+                                       '{}/mrvbf_stats'.format(temp_folder), "NODATA", "SUM")
     arcpy.TableToExcel_conversion('{}/mrvbf_stats'.format(temp_folder), '{}/mrvbf_stats.xls'.format(temp_folder))
     arcpy.TableToExcel_conversion(drain_shape, '{}/drain_lengths.xls'.format(temp_folder))
 
     x_size = float(arcpy.GetRasterProperties_management(raster, "CELLSIZEX").getOutput(0))
     y_size = float(arcpy.GetRasterProperties_management(raster, "CELLSIZEY").getOutput(0))
 
-    df_stats = pd.ExcelFile('{}/mrvbf_stats.xls'.format(temp_folder)).parse(sheetname='mrvbf_stats', index_col='NAME')
-    df_drain = pd.ExcelFile('{}/drain_lengths.xls'.format(temp_folder)).parse(sheetname='drain_lengths', index_col='Name')
+    df_stats = pd.ExcelFile('{}/mrvbf_stats.xls'.format(temp_folder)).parse(sheetname='mrvbf_stats',
+                                                                            index_col='NAME')
+    df_drain = pd.ExcelFile('{}/drain_lengths.xls'.format(temp_folder)).parse(sheetname='drain_lengths',
+                                                                              index_col='Name')
     df_stats['Area_MRVBF'] = df_stats['SUM'] * x_size * y_size
     df_stats['w_valley'] = df_stats['Area_MRVBF'] / df_drain['Shape_Length']
     df_stats.index.name = 'Code'
@@ -136,24 +139,43 @@ def fn_beechie(raster, drain_shape, uttl_basins, fac, workspace, CTr, qTr):
     CTr_path = CTr
     qTr_path = qTr
 
-    arcpy.ProjectRaster_management(CTr_path, '{}/CTr_reproject.tif'.format(temp_folder), spatial_ref, "NEAREST", '{} {}'.format(x_size, y_size), "#", "#", arcpy.Describe(CTr_path).spatialReference)
-    arcpy.ProjectRaster_management(qTr_path, '{}/qTr_reproject.tif'.format(temp_folder), spatial_ref, "NEAREST", '{} {}'.format(x_size, y_size), "#", "#", arcpy.Describe(qTr_path).spatialReference)
-    arcpy.ProjectRaster_management(fac, '{}/fac_reproject.tif'.format(temp_folder), spatial_ref, "NEAREST", '{} {}'.format(x_size, y_size), "#", "#", arcpy.Describe(fac).spatialReference)
+    arcpy.ProjectRaster_management(CTr_path, '{}/CTr_reproject.tif'.format(temp_folder), spatial_ref, "NEAREST",
+                                   '{} {}'.format(x_size, y_size), "#", "#", arcpy.Describe(CTr_path).spatialReference)
+    arcpy.ProjectRaster_management(qTr_path, '{}/qTr_reproject.tif'.format(temp_folder), spatial_ref, "NEAREST",
+                                   '{} {}'.format(x_size, y_size), "#", "#", arcpy.Describe(qTr_path).spatialReference)
+    arcpy.ProjectRaster_management(fac, '{}/fac_reproject.tif'.format(temp_folder), spatial_ref, "NEAREST",
+                                   '{} {}'.format(x_size, y_size), "#", "#", arcpy.Describe(fac).spatialReference)
 
     arcpy.MakeRasterLayer_management('{}/CTr_reproject.tif'.format(temp_folder), 'CTr')
     arcpy.MakeRasterLayer_management('{}/qTr_reproject.tif'.format(temp_folder), 'qTr')
     arcpy.MakeRasterLayer_management('{}/fac_reproject.tif'.format(temp_folder), 'fac')
 
-    arcpy.gp.RasterCalculator_sa('"{}" * Power(("{}" * {} * {}) / 1000000,"{}")'.format('CTr', 'fac', x_size, y_size, 'qTr'), "{}/Qmax".format(workspace))
+    arcpy.gp.RasterCalculator_sa('"{}" * Power(("{}" * {} * {}) / 1000000,"{}")'.format('CTr', 'fac', x_size, y_size,
+                                                                                        'qTr'),
+                                 "{}/Qmax".format(workspace))
 
-    arcpy.gp.ZonalStatisticsAsTable_sa(uttl_basins, "Name", '{}/Qmax'.format(workspace), '{}/Qmax_stats'.format(temp_folder), "DATA", "MAXIMUM")
+    arcpy.gp.ZonalStatisticsAsTable_sa(uttl_basins, "Name", '{}/Qmax'.format(workspace),
+                                       '{}/Qmax_stats'.format(temp_folder), "DATA", "MAXIMUM")
     arcpy.TableToExcel_conversion('{}/Qmax_stats'.format(temp_folder), '{}/Qmax_stats.xls'.format(temp_folder))
-    df_stats['Qmax'] = pd.ExcelFile('{}/Qmax_stats.xls'.format(temp_folder)).parse(sheetname='Qmax_stats', index_col='NAME')['MAX']
+    df_stats['Qmax'] = pd.ExcelFile('{}/Qmax_stats.xls'.format(temp_folder)).parse(sheetname='Qmax_stats',
+                                                                                   index_col='NAME')['MAX']
+    # Qmax Classification
+    df_stats['Qmax_Class'] = 'Alto'
+
+    low = np.percentile(df_stats['Qmax'], 25)
+    low_medium = np.percentile(df_stats['Qmax'], 50)
+    high_medium = np.percentile(df_stats['Qmax'], 75)
+
+    df_stats.ix[df_stats[df_stats['Qmax'] < low].index, 'Qmax_Class'] = 'Bajo'
+    df_stats.ix[df_stats[(df_stats['Qmax'] >= low) & (df_stats['Qmax'] < low_medium)].index, 'Qmax_Class'] = 'Medio Bajo'
+    df_stats.ix[df_stats[(df_stats['Qmax'] >= low_medium) & (df_stats['Qmax'] < high_medium)].index, 'Qmax_Class'] = 'Medio Alto'
+
     df_stats['Slope'] = df_uttl['Slope']
 
     gp.AddMessage('Classification of streams alignment based on slope-flow thresholds ... ')
 
     df_stats['Beechie'] = None
+    df_stats['BeechieClass'] = 'Inconfinados'
     df_stats['Smax'] = 0.1 * (df_stats['Qmax'] ** -0.42)
     df_stats['Smin'] = 0.05 * (df_stats['Qmax'] ** -0.61)
 
@@ -163,9 +185,12 @@ def fn_beechie(raster, drain_shape, uttl_basins, fac, workspace, CTr, qTr):
     df_stats.ix[df_stats[(df_stats['Slope'] < df_stats['Smin']) & (df_stats['Qmax'] > 15.) & (df_stats['DoC'] > 4.)].index, 'Beechie'] = 'Meandricos'
     df_stats.ix[df_stats[(df_stats['Slope'] > df_stats['Smin']) & (df_stats['Slope'] < df_stats['Smax']) & (df_stats['Qmax'] > 15.) & (df_stats['DoC'] > 4.)].index, 'Beechie'] = 'Trenzados-Islas'
 
+    # Beechie Reclass
+    df_stats.ix[df_stats[df_stats['Beechie'] == 'Confinados'].index, 'BeechieClass'] = 'Confinados'
+
     df_stats.index = [str(i) for i in df_stats.index]
     df_stats.index.name = 'Code'
-    df_stats[['w_valley', 'WB', 'DoC', 'Qmax', 'Smax', 'Smin', 'Beechie']].to_csv('{}/Beechie_Table.csv'.format(temp_folder), index_label='Code')
+    df_stats[['w_valley', 'WB', 'DoC', 'Qmax', 'Qmax_Class', 'Smax', 'Smin', 'Beechie', 'BeechieClass']].to_csv('{}/Beechie_Table.csv'.format(temp_folder), index_label='Code')
 
     arcpy.TableToTable_conversion('{}/Beechie_Table.csv'.format(temp_folder), workspace, 'Beechie')
 

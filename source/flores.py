@@ -37,12 +37,20 @@ def flores_class(table, workspace):
     df_table = pd.read_csv(table, index_col='Name')
     df_table['SPI'] = df_table['Slope'] * df_table['Areas_Km2'] ** 0.4
     df_table['Flores'] = None
+    df_table['Flores_class'] = None
 
     df_table.ix[df_table[(df_table['Slope'] <= 0.025) & (df_table['SPI'] <= 0.055)].index, 'Flores'] = 'Pool-riffle'
     df_table.ix[df_table[(df_table['Slope'] <= 0.025) & (df_table['SPI'] > 0.055)].index, 'Flores'] = 'Plane-bed'
     df_table.ix[df_table[(df_table['Slope'] > 0.025) & (df_table['SPI'] <= 0.206)].index, 'Flores'] = 'Step-pool'
     df_table.ix[df_table[(df_table['Slope'] > 0.025) & (df_table['SPI'] > 0.206)].index, 'Flores'] = 'Cascade'
     df_table.index = df_table.index.map(unicode)
+
+    # Flores Reclassification
+    df_table.ix[df_table[(df_table['Flores'] == 'Step-pool') or (df_table['Flores'] == 'Cascade')].index,
+                'Flores_class'] = 'Lim_Suministro'
+
+    df_table.ix[df_table[(df_table['Flores'] == 'Pool-riffle') or (df_table['Flores'] == 'Plane-bed')].index,
+                'Flores_class'] = 'Lim_Capacidad'
 
     df_table.to_csv(os.path.join(folder, r'temp/TableFloresClassification.csv'), index_label='Name')
     arcpy.Delete_management(os.path.join(workspace, 'TableFloresClassificationJoin'))
@@ -68,19 +76,6 @@ def slope_calc(batch_point, workspace, drain, epsg, dem, uttl):
 
     folder = os.path.dirname(workspace)
     UTTL_Basins = uttl.split('/')[-1]
-
-    # ArcHydroTools.Construct3DLine(in_line2d_features=drain, in_rawdem_raster=dem, out_line3d_features=os.path.join(workspace, 'Drain3D'))
-    # ArcHydroTools.Smooth3DLine(in_line3d_features=os.path.join(workspace, 'Drain3D'),
-    #                            out_smoothline3d_features=os.path.join(workspace, 'SmoothDrain3D_UTM'))
-    #
-    # transform_in = gp.Describe(os.path.join(workspace, 'SmoothDrain3D_UTM'))
-    # ref_in = transform_in.SpatialReference
-    # arcpy.Project_management(in_dataset=os.path.join(workspace, 'SmoothDrain3D_UTM'),
-    #                          out_dataset=os.path.join(workspace, 'SmoothDrain3D'),
-    #                          out_coor_system=epsg,
-    #                          transform_method="",
-    #                          in_coor_system=ref_in,
-    #                          preserve_shape="NO_PRESERVE_SHAPE", max_deviation="", vertical="NO_VERTICAL")
 
     arcpy.SplitLineAtPoint_management(os.path.join(workspace, 'SmoothDrain3D'), batch_point,
                                       os.path.join(folder, r'Temp/SmoothDrain3DSplit.shp'))
@@ -158,7 +153,7 @@ def areas_watershed(workspace, fac, uttl):
     gp.AddMessage('Watershed Areas Algorithm was successful')
 
 
-def flores(workspace, uttl):
+def flores(workspace, uttl, erase_garbage=False):
 
     gp = arcgisscripting.create()
     gp.CheckOutExtension("Spatial")
@@ -184,21 +179,25 @@ def flores(workspace, uttl):
     arcpy.CopyFeatures_management('UTTL', os.path.join(folder, r'temp/UTTL_Flores.shp'))
 
     field_obj_list = arcpy.ListFields(os.path.join(folder, r'temp/UTTL_Flores.shp'))
-    keep_field = ['FID', 'Shape', 'Name', 'Areas_Km2', 'Slope', 'Flores']
+    keep_field = ['FID', 'Shape', 'Name', 'Areas_Km2', 'Slope', 'Flores', 'Flores_class']
     arcpy.DeleteField_management(os.path.join(folder, r'temp/UTTL_Flores.shp'),
                                  [x.name for x in field_obj_list if x.name not in keep_field])
 
     arcpy.CopyFeatures_management(os.path.join(folder, r'temp/UTTL_Flores.shp'), os.path.join(workspace, 'UTTL_Basins'))
-    arcpy.Delete_management(os.path.join(folder, r'temp/UTTL_Flores.shp'))
-    arcpy.Delete_management(os.path.join(folder, r'temp/TableAreas.csv'))
-    arcpy.Delete_management(os.path.join(folder, r'temp/TableFlores.csv'))
-    arcpy.Delete_management(os.path.join(folder, r'temp/TableFloresClassification.csv'))
-    arcpy.Delete_management(os.path.join(folder, r'temp/TableSlope.csv'))
+
+    if erase_garbage:
+        arcpy.Delete_management(os.path.join(folder, r'temp/UTTL_Flores.shp'))
+        arcpy.Delete_management(os.path.join(folder, r'temp/TableAreas.csv'))
+        arcpy.Delete_management(os.path.join(folder, r'temp/TableFlores.csv'))
+        arcpy.Delete_management(os.path.join(folder, r'temp/TableFloresClassification.csv'))
+        arcpy.Delete_management(os.path.join(folder, r'temp/TableSlope.csv'))
 
     gp.AddMessage('Valley Confinement Algorithm was successful')
 
 
 def main(env):
+
+    gp = arcgisscripting.create()
 
     if env:
         gdb_path = arcpy.GetParameterAsText(0)
@@ -217,6 +216,7 @@ def main(env):
         uttl = r'C:\Users\jchav\AH_03\results\UTTL.gdb\UTTL_Basins'
         fac_path = r'C:\Users\jchav\AH_03\results\UTTL.gdb\fac'
 
+    gp.AddMessage('calculating slopes')
     slope_calc(batch_point=batchpoints_path,
                workspace=gdb_path,
                drain=drain_network_path,
@@ -224,12 +224,16 @@ def main(env):
                dem=dem_path,
                uttl=uttl)
 
+    gp.AddMessage('slopes calculate was successfully')
+    gp.AddMessage('calculating areas')
     areas_watershed(workspace=gdb_path,
                     fac=fac_path,
                     uttl=uttl)
-
+    gp.AddMessage('areas calculate was successfully')
+    gp.AddMessage('calculating flores')
     flores(workspace=gdb_path,
            uttl=uttl)
+    gp.AddMessage('flores was successfully')
 
 
 if __name__ == '__main__':
