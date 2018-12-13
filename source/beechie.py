@@ -20,7 +20,7 @@ def add_layer(layer):
 def import_data_to_saga(mde_loc, temp):
     gp = arcgisscripting.create()
     gp.AddMessage('Copying data to SAGA ...')
-    mde_out = '-GRIDS={}/saga_mde'.format(temp)
+    mde_out = r'-GRIDS={}\saga_mde'.format(temp)
     mde_in = '-FILES={}'.format(mde_loc)
     trf = '-TRANSFORM 1'
     command = ['saga_cmd', 'io_gdal', '0', mde_out, mde_in, trf]
@@ -108,28 +108,26 @@ def fn_beechie(raster, drain_shape, uttl_basins, fac, workspace, CTr, qTr):
 
     gp.AddMessage('Wvalley width ... ')
 
-    arcpy.gp.RasterCalculator_sa('Con(IsNull("{}"),0,"{}")'.format(raster, raster),
-                                 '{}/temp_mrvbf.tif'.format(temp_folder))
-    arcpy.gp.ZonalStatisticsAsTable_sa(uttl_basins, "Name", '{}/temp_mrvbf.tif'.format(temp_folder),
-                                       '{}/mrvbf_stats'.format(temp_folder), "NODATA", "SUM")
-    arcpy.TableToExcel_conversion('{}/mrvbf_stats'.format(temp_folder), '{}/mrvbf_stats.xls'.format(temp_folder))
-    arcpy.TableToExcel_conversion(drain_shape, '{}/drain_lengths.xls'.format(temp_folder))
+    arcpy.gp.RasterCalculator_sa('Con(IsNull("{}"),0,"{}")'.format(raster, raster), '{}/temp_mrvbf.tif'.format(temp_folder))
+    arcpy.gp.ZonalStatisticsAsTable_sa(uttl_basins, "Name", '{}/temp_mrvbf.tif'.format(temp_folder), '{}/mrvbf_stats'.format(temp_folder), "NODATA", "SUM")
+
+    arcpy.TableToTable_conversion('{}/mrvbf_stats'.format(temp_folder), temp_folder, 'mrvbf_stats.csv')
+    arcpy.TableToTable_conversion(drain_shape, temp_folder, 'drain_lengths.csv')
 
     x_size = float(arcpy.GetRasterProperties_management(raster, "CELLSIZEX").getOutput(0))
     y_size = float(arcpy.GetRasterProperties_management(raster, "CELLSIZEY").getOutput(0))
 
-    df_stats = pd.ExcelFile('{}/mrvbf_stats.xls'.format(temp_folder)).parse(sheetname='mrvbf_stats',
-                                                                            index_col='NAME')
-    df_drain = pd.ExcelFile('{}/drain_lengths.xls'.format(temp_folder)).parse(sheetname='drain_lengths',
-                                                                              index_col='Name')
+    df_stats = pd.read_csv('{}/mrvbf_stats.csv'.format(temp_folder), index_col='NAME')
+    df_drain = pd.read_csv('{}/drain_lengths.csv'.format(temp_folder), index_col='Name')
+
     df_stats['Area_MRVBF'] = df_stats['SUM'] * x_size * y_size
     df_stats['w_valley'] = df_stats['Area_MRVBF'] / df_drain['Shape_Length']
     df_stats.index.name = 'Code'
 
     gp.AddMessage('Width braided valley  ... ')
 
-    arcpy.TableToExcel_conversion(uttl_basins, '{}/UTTL_table.xls'.format(temp_folder))
-    df_uttl = pd.ExcelFile('{}/UTTL_table.xls'.format(temp_folder)).parse(sheetname='UTTL_table', index_col='Name')
+    arcpy.TableToTable_conversion(uttl_basins, temp_folder, 'UTTL_table.csv')
+    df_uttl = pd.read_csv('{}/UTTL_table.csv'.format(temp_folder), index_col='Name')
     df_stats['WB'] = 17.748 * (df_uttl['Areas_Km2'] ** 0.3508)
     df_stats['DoC'] = df_stats['w_valley'] / df_stats['WB']
 
@@ -150,15 +148,11 @@ def fn_beechie(raster, drain_shape, uttl_basins, fac, workspace, CTr, qTr):
     arcpy.MakeRasterLayer_management('{}/qTr_reproject.tif'.format(temp_folder), 'qTr')
     arcpy.MakeRasterLayer_management('{}/fac_reproject.tif'.format(temp_folder), 'fac')
 
-    arcpy.gp.RasterCalculator_sa('"{}" * Power(("{}" * {} * {}) / 1000000,"{}")'.format('CTr', 'fac', x_size, y_size,
-                                                                                        'qTr'),
-                                 "{}/Qmax".format(workspace))
+    arcpy.gp.RasterCalculator_sa('"{}" * Power(("{}" * {} * {}) / 1000000,"{}")'.format('CTr', 'fac', x_size, y_size, 'qTr'), "{}/Qmax".format(workspace))
 
-    arcpy.gp.ZonalStatisticsAsTable_sa(uttl_basins, "Name", '{}/Qmax'.format(workspace),
-                                       '{}/Qmax_stats'.format(temp_folder), "DATA", "MAXIMUM")
-    arcpy.TableToExcel_conversion('{}/Qmax_stats'.format(temp_folder), '{}/Qmax_stats.xls'.format(temp_folder))
-    df_stats['Qmax'] = pd.ExcelFile('{}/Qmax_stats.xls'.format(temp_folder)).parse(sheetname='Qmax_stats',
-                                                                                   index_col='NAME')['MAX']
+    arcpy.gp.ZonalStatisticsAsTable_sa(uttl_basins, "Name", '{}/Qmax'.format(workspace), '{}/Qmax_stats'.format(temp_folder), "DATA", "MAXIMUM")
+    arcpy.TableToTable_conversion('{}/Qmax_stats'.format(temp_folder), temp_folder, 'Qmax_stats.csv')
+    df_stats['Qmax'] = pd.read_csv('{}/Qmax_stats.csv'.format(temp_folder), index_col='NAME')['MAX']
     # Qmax Classification
     df_stats['Qmax_Class'] = 'Alto'
 
@@ -238,8 +232,8 @@ def main(env):
         par9 = gp.GetParameterAsText(12)
         par10 = gp.GetParameterAsText(13)
     else:
-        mdt_file = r'E:\AH_02\data\srtm_col_3116.tif'
-        gdb_path = r'E:\AH_02\UTTL.gdb'
+        mdt_file = r'C:\Users\jchav\AH_03\data\srtm_orinoco_plus_500_3117.tif'
+        gdb_path = r'C:\Users\jchav\AH_03\results\UTTL.gdb'
         name_out = 'mrvbf'
         par1 = 8
         par2 = 0.4
@@ -247,24 +241,25 @@ def main(env):
         par4 = 4
         par5 = 3
         show = True
-        par6 = r'E:\AH_02\UTTL.gdb\Drain_UTTL'
-        par7 = r'E:\AH_02\UTTL.gdb\UTTL_Basins'
-        par8 = r'E:\AH_02\UTTL.gdb\fac'
-        par9 = r'E:\AH_02\data\Qmax_Regional_UPME_CTr.tif'
-        par10 = r'E:\AH_02\data\Qmax_Regional_UPME_qTr.tif'
+        par6 = r'C:\Users\jchav\AH_03\results\UTTL.gdb\Drain_UTTL'
+        par7 = r'C:\Users\jchav\AH_03\results\UTTL.gdb\UTTL_Basins'
+        par8 = r'C:\Users\jchav\AH_03\results\UTTL.gdb\fac'
+        par9 = r'C:\Users\jchav\AH_03\data\Qmax_Regional_UPME_CTr.tif'
+        par10 = r'C:\Users\jchav\AH_03\data\Qmax_Regional_UPME_qTr.tif'
 
     gp.AddMessage('Making temps folders')
-    temp_folder = '{}/temp'.format(os.path.dirname(os.path.abspath(gdb_path)))
+    temp_folder = r'{}\temp'.format(os.path.dirname(os.path.abspath(gdb_path)))
 
     if os.path.exists(temp_folder):
         gp.AddMessage('folder temp already exists')
     else:
         os.mkdir(temp_folder)
 
-    import_data_to_saga(mdt_file, temp_folder)
-    run_mrvbf(temp=temp_folder, t_slope=par1, tv=par2, tr=par3, p_slope=par4, p=par5)
-    export_data_from_saga(temp_folder, out_grid=name_out, gdb=gdb_path, show=show)
-
+    # gp.AddMessage('Running SAGA - MRVBF')
+    # import_data_to_saga(mdt_file, temp_folder)
+    # run_mrvbf(temp=temp_folder, t_slope=par1, tv=par2, tr=par3, p_slope=par4, p=par5)
+    # export_data_from_saga(temp_folder, out_grid=name_out, gdb=gdb_path, show=show)
+    gp.AddMessage('Running Beechie')
     fn_beechie(raster='{}/{}'.format(gdb_path, name_out), drain_shape=par6, uttl_basins=par7, fac=par8, workspace=gdb_path, CTr=par9, qTr=par10)
 
 

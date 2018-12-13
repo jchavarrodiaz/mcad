@@ -5,6 +5,7 @@ import os
 import sys
 
 import arcpy
+import numpy as np
 import pandas as pd
 import unicodedata
 from arcpy.sa import *
@@ -81,6 +82,7 @@ def attribute_from_vector(feat, object, field, id_index):
         gp.AddMessage('The {} field already exits'.format(field))
         arcpy.DeleteField_management(feat, field)
 
+    gp.AddMessage('Intersect Analysis')
     arcpy.Intersect_analysis(in_features='{} #;{} #'.format(feat, object),
                              out_feature_class='{}/UTTL_Basins_Intersect'.format(temp_folder),
                              join_attributes='NO_FID', cluster_tolerance="-1 Unknown",
@@ -90,11 +92,10 @@ def attribute_from_vector(feat, object, field, id_index):
     exp = "!SHAPE.AREA@SQUAREKILOMETERS!"
     arcpy.CalculateField_management('{}/UTTL_Basins_Intersect.shp'.format(temp_folder), "Up_Area", exp, "PYTHON_9.3")
 
-    arcpy.TableToExcel_conversion(Input_Table='{}/UTTL_Basins_Intersect.shp'.format(temp_folder),
-                                  Output_Excel_File='{}/UTTL_Basins_Intersect.xls'.format(temp_folder))
+    arcpy.TableToTable_conversion('{}/UTTL_Basins_Intersect.shp'.format(temp_folder), temp_folder, 'UTTL_Basins_Intersect.csv')
 
     field = check_arcmap_field(field)
-    df_table = pd.ExcelFile('{}/UTTL_Basins_Intersect.xls'.format(temp_folder)).parse('UTTL_Basins_Intersect'.format(temp_folder), index_col='FID')[[id_index, field, 'Up_Area']]
+    df_table = pd.read_csv('{}/UTTL_Basins_Intersect.csv'.format(temp_folder))[[id_index, field, 'Up_Area']]
 
     idx = df_table.groupby(by=id_index, sort=False)['Up_Area'].transform(max) == df_table['Up_Area']
     df_sel_table = df_table[idx]
@@ -104,7 +105,7 @@ def attribute_from_vector(feat, object, field, id_index):
     df_join_table.drop(labels=[id_index, 'Up_Area'], axis=1, inplace=True)
     df_join_table.columns = [field, id_index]
 
-    df_join_table.to_excel('{}/UTTL_Basins_NewVectorAttribute.xls'.format(temp_folder), sheet_name=field)
+    df_join_table.to_csv('{}/UTTL_Basins_NewVectorAttribute.csv'.format(temp_folder))
 
     # check if the 'to' field exists and if not found then add it
     if len(arcpy.ListFields(feat, field)) == 0:
@@ -116,15 +117,17 @@ def attribute_from_vector(feat, object, field, id_index):
         gp.AddMessage('Adding {} field'.format(field))
         arcpy.AddField_management(feat, field, 'TEXT')
 
+    x = np.array(np.rec.fromrecords(df_join_table.values))
+    names = df_join_table.dtypes.index.tolist()
+    x.dtype.names = tuple(names)
+    arcpy.da.NumPyArrayToTable(x, r'{}\{}'.format(gdb_path, field))
+
     # joins are annoying but you #should# be able to do it this way
     # joins must be performed on a Layer or Table View object...
     arcpy.MakeFeatureLayer_management(feat, 'Layer')
-    arcpy.ExcelToTable_conversion('{}/UTTL_Basins_NewVectorAttribute.xls'.format(temp_folder), '{}/newvecatt'.format(temp_folder), field)
-    arcpy.AddJoin_management('Layer', id_index, '{}/newvecatt'.format(temp_folder), id_index)
-    # arcpy.CopyFeatures_management('Layer', os.path.join(temp_folder, r'UTTL_Basins_NewVectorAttribute.shp'))
-    upper_new_field = str.upper(field)
-    arcpy.CalculateField_management('Layer', field, '!newvecatt:{}!'.format(upper_new_field), 'PYTHON_9.3')
-    arcpy.RemoveJoin_management('Layer', 'newvecatt')  # not really necessary, it dissapears at the end of the script anyway
+    arcpy.AddJoin_management('Layer', id_index, r'{}\{}'.format(gdb_path, field), id_index)
+    arcpy.CalculateField_management('Layer', field, '!{}.{}!'.format(field, field), 'PYTHON_9.3')
+    gp.AddMessage('attribute {} added successfully'.format(field))
 
 
 def add_attribute(object, feature, stats, new_att, uttl):
@@ -144,7 +147,7 @@ def main(env):
     if env:
         uttl_feature = arcpy.GetParameterAsText(0)  # UTTL Polygons
         id_uttl_name = arcpy.GetParameterAsText(1)  # ID Name for UTTL Basin
-        new_object = arcpy.GetParameterAsText(2)  # new object (raster or vector) for from extract new information and add to attribute table of uttl units
+        new_object = arcpy.GetParameterAsText(2)  # new object (raster or vector) from extract new information and add to attribute table of uttl units
         stats_type = arcpy.GetParameterAsText(3)  # MEAN, MODE, ..., etc.
         field_new_name = arcpy.GetParameterAsText(4)  # new name for uttl's attribute
 
@@ -153,11 +156,11 @@ def main(env):
         add_attribute(object=new_object, feature=uttl_feature, stats=stats_type, new_att=new, uttl=id_uttl_name)
 
     else:
-        uttl_feature = r'E:\TEST\results\UTTL.gdb\UTTL_Basins'  # UTTL Polygons
+        uttl_feature = r'C:\Users\jchav\AH_03\results\UTTL.gdb\UTTL_Basins'  # UTTL Polygons
         id_uttl_name = 'Name'
-        new_object = r'F:\BASES\GEOLOGIA\MGC_2015\mgc2015.gdb\Geologia\UC'  # new object (raster or vector) for from extract new information and add to attribute table of uttl units
-        stats_type = None  # MEAN, MODE, ..., etc.
-        field_new_name = u'Símbolo UC'  # new name for uttl's attribute [the field name with less of 10 characters]
+        new_object = r'C:\Users\jchav\AH_03\data\Regimen_Hidrologico\Regimen_Hidrologico_Orinoco_3117.shp'  # new object (raster or vector) for from extract new information and add to attribute table of uttl units
+        stats_type = 'MEAN'  # MEAN, MODE, ..., etc.
+        field_new_name = u'regimen'  # new name for uttl's attribute [the field name with less of 10 characters]
 
         new = unicodedata.normalize('NFD', field_new_name).encode('ascii', 'ignore')
 
@@ -165,4 +168,4 @@ def main(env):
 
 
 if __name__ == '__main__':
-    main(env=True)
+    main(env=False)

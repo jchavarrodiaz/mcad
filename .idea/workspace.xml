@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca60032c-5cf9-4feb-9e17-c8547ec341d9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/source/flores.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/flores.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/add_attribute.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/add_attribute.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/beechie.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/beechie.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/cluster.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/cluster.py" afterDir="false" />
     </list>
     <ignored path=".idea/" />
     <ignored mask="*.pyc" />
@@ -17,22 +20,29 @@
     <session id="1152038434">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="979" />
+          <entry key="py" value="1676" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="979" />
+          <entry key="Python" value="1676" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="4" />
+          <entry key="py" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="4" />
+          <entry key="Python" value="13" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.3" value="2" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
     </session>
@@ -45,11 +55,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/aconditioning_dem.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
+            <state relative-caret-position="374">
               <caret line="145" column="26" selection-start-line="145" selection-start-column="4" selection-end-line="145" selection-end-column="26" />
               <folding>
                 <element signature="e#25#47#0" expanded="true" />
-                <element signature="e#1209#1374#0" />
               </folding>
             </state>
           </provider>
@@ -58,7 +67,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/hydro_points.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
+            <state relative-caret-position="1216">
               <caret line="78" column="28" selection-start-line="78" selection-start-column="28" selection-end-line="78" selection-end-column="28" />
             </state>
           </provider>
@@ -67,7 +76,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/knickpoints.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
+            <state relative-caret-position="2848">
               <caret line="183" column="96" selection-start-line="183" selection-start-column="89" selection-end-line="183" selection-end-column="96" />
             </state>
           </provider>
@@ -76,7 +85,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/batch_points.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="79">
+            <state relative-caret-position="768">
               <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
               <folding>
                 <element signature="e#25#34#0" expanded="true" />
@@ -88,17 +97,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/segmentation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="559">
+            <state relative-caret-position="976">
               <caret line="65" column="18" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/flores.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="439">
-              <caret line="231" column="30" lean-forward="true" selection-start-line="231" selection-start-column="30" selection-end-line="231" selection-end-column="30" />
+            <state relative-caret-position="3616">
+              <caret line="233" column="44" selection-start-line="233" selection-start-column="44" selection-end-line="233" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -106,11 +115,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/beechie.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="192" column="58" selection-start-line="192" selection-start-column="58" selection-end-line="192" selection-end-column="58" />
+            <state relative-caret-position="1792">
+              <caret line="121" selection-start-line="121" selection-end-line="121" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/add_attribute.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="417">
+              <caret line="129" column="66" lean-forward="true" selection-start-line="129" selection-start-column="66" selection-end-line="129" selection-end-column="66" />
+              <folding>
+                <element signature="e#46#68#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/source/cluster.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="355">
+              <caret line="143" column="25" lean-forward="true" selection-start-line="143" selection-start-column="25" selection-end-line="143" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -144,16 +174,17 @@
         <option value="$PROJECT_DIR$/source/knickpoints.py" />
         <option value="$PROJECT_DIR$/source/batch_points.py" />
         <option value="$PROJECT_DIR$/source/segmentation.py" />
-        <option value="$PROJECT_DIR$/source/beechie.py" />
         <option value="$PROJECT_DIR$/source/flores.py" />
+        <option value="$PROJECT_DIR$/source/beechie.py" />
+        <option value="$PROJECT_DIR$/source/add_attribute.py" />
+        <option value="$PROJECT_DIR$/source/cluster.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1176" />
+    <option name="x" value="55" />
+    <option name="width" value="1263" />
+    <option name="height" value="1087" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -186,121 +217,6 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.idea" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/MCAD.iml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/misc.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/source/aconditioning_dem.py</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/source/hydro_points.py</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/source/knickpoints.py</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
-  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -313,8 +229,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.flores">
-    <configuration name="batch_points" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.cluster">
+    <configuration name="add_attribute" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MCAD" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -326,7 +242,49 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/batch_points.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/add_attribute.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="beechie" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MCAD" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/beechie.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="cluster" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MCAD" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/cluster.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -348,48 +306,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/flores.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="hydro_points" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="MCAD" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/hydro_points.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="knickpoints" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="MCAD" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/knickpoints.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -420,19 +336,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.knickpoints" />
-      <item itemvalue="Python.batch_points" />
-      <item itemvalue="Python.hydro_points" />
       <item itemvalue="Python.segmentation" />
       <item itemvalue="Python.flores" />
+      <item itemvalue="Python.beechie" />
+      <item itemvalue="Python.add_attribute" />
+      <item itemvalue="Python.cluster" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.cluster" />
+        <item itemvalue="Python.add_attribute" />
+        <item itemvalue="Python.beechie" />
         <item itemvalue="Python.flores" />
         <item itemvalue="Python.segmentation" />
-        <item itemvalue="Python.batch_points" />
-        <item itemvalue="Python.knickpoints" />
-        <item itemvalue="Python.hydro_points" />
       </list>
     </recent_temporary>
   </component>
@@ -460,16 +376,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="2514" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48856547" weight="0.112469435" />
-      <window_info id="Structure" order="1" sideWeight="0.5114345" side_tool="true" visible="true" weight="0.112469435" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48688352" weight="0.17705736" />
+      <window_info id="Structure" order="1" sideWeight="0.5131165" side_tool="true" weight="0.17705736" />
       <window_info id="Favorites" order="2" sideWeight="0.5119306" side_tool="true" weight="0.10969793" />
-      <window_info id="TODO" order="3" sideWeight="0.497921" visible="true" weight="0.14384678" />
+      <window_info id="TODO" order="3" sideWeight="0.4927235" weight="0.14506927" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31496882" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.35031185" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3118503" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.35362014" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Version Control" order="6" weight="0.3275488" />
@@ -477,8 +392,8 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Python Console" order="3" sideWeight="0.4802495" side_tool="true" visible="true" weight="0.26405868" />
-      <window_info anchor="right" id="Terminal" order="4" sideWeight="0.51975054" visible="true" weight="0.26405868" />
+      <window_info anchor="right" id="Python Console" order="3" sideWeight="0.48336798" side_tool="true" visible="true" weight="0.41116545" />
+      <window_info active="true" anchor="right" id="Terminal" order="4" sideWeight="0.516632" visible="true" weight="0.41116545" />
     </layout>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -507,6 +422,9 @@
       </map>
     </option>
   </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -519,6 +437,16 @@
           <url>file://$PROJECT_DIR$/source/hydro_points.py</url>
           <line>14</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/source/beechie.py</url>
+          <line>22</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/source/beechie.py</url>
+          <line>113</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -550,47 +478,47 @@
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>df_table</expression-string>
+        <expression-string>arcpy.CalculateField_management('Layer', field, '!newvecatt.{}!'.format(field), 'PYTHON_9.3')</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>df_table.ix[df_table[(df_table['Flores'] == 'Step-pool') | (df_table['Flores'] == 'Cascade')].index, 'Flores']</expression-string>
+        <expression-string>arcpy.ListFields('Layer')</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>df_table.ix[df_table[(df_table['Flores'] == 'Step-pool') | (df_table['Flores'] == 'Cascade')].index, 'Flores_class']</expression-string>
+        <expression-string>arcpy.CalculateField_management('Layer', field, '!newvecatt:{}!'.format(field), 'PYTHON_9.3')</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>df_table.ix[df_table[(df_table['Flores'] == 'Step-pool') or (df_table['Flores'] == 'Cascade')].index, 'Flores_class']</expression-string>
+        <expression-string>arcpy.CalculateField_management('Layer', field, '!newvecatt:{}!'.format(upper_new_field), 'PYTHON_9.3')</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>RDEt</expression-string>
+        <expression-string>upper_new_field = str.upper(field)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>line_point.RDE_t = rde_t</expression-string>
+        <expression-string>arcpy.AddJoin_management('Layer', id_index, r'{}\newvecatt'.format(gdb_path), id_index)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>line_point</expression-string>
+        <expression-string>arcpy.ListFields(feat, field)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>valor_pixel_sum - feat_vertex[v][2]</expression-string>
+        <expression-string>arcpy.da.NumPyArrayToTable(x, r'{}\TestTable.dbf'.format(temp_folder))</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>valor_pixel_sum - feat_vertex[v][2] &gt;= int(eq) / 2 and point_x == -1 and point_y == -1</expression-string>
+        <expression-string>arcpy.da.NumPyArrayToTable(x, r'{}\TestTable.dbf')</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -598,77 +526,14 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://C:/Program Files (x86)/ArcGIS/Desktop10.5/arcpy/arcpy/management.py" />
-    <entry file="file://$PROJECT_DIR$/source/add_attribute.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://C:/Program Files (x86)/ArcGIS/Desktop10.4/arcpy/arcpy/management.py" />
-    <entry file="file://$PROJECT_DIR$/source/hydro_points.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="78" column="28" selection-start-line="78" selection-start-column="28" selection-end-line="78" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/aconditioning_dem.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="145" column="26" selection-start-line="145" selection-start-column="4" selection-end-line="145" selection-end-column="26" />
-          <folding>
-            <element signature="e#25#47#0" expanded="true" />
-            <element signature="e#1209#1374#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/batch_points.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
-          <folding>
-            <element signature="e#25#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/make_agree_dem.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#25#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/knickpoints.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="183" column="96" selection-start-line="183" selection-start-column="89" selection-end-line="183" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/cluster.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-756" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/segmentation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
-          <caret line="65" column="18" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/beechie.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="192" column="58" selection-start-line="192" selection-start-column="58" selection-end-line="192" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -679,10 +544,106 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_bundle/pydev_monkey.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="444" selection-start-line="444" selection-end-line="444" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files (x86)/ArcGIS/Desktop10.6/arcpy/arcpy/geoprocessing/_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="509" selection-start-line="509" selection-end-line="509" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files (x86)/ArcGIS/Desktop10.6/arcpy/arcpy/conversion.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="2266" selection-start-line="2266" selection-end-line="2266" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/hydro_points.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1216">
+          <caret line="78" column="28" selection-start-line="78" selection-start-column="28" selection-end-line="78" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/knickpoints.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2848">
+          <caret line="183" column="96" selection-start-line="183" selection-start-column="89" selection-end-line="183" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/batch_points.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="768">
+          <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
+          <folding>
+            <element signature="e#25#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/segmentation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="976">
+          <caret line="65" column="18" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/source/flores.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="231" column="30" lean-forward="true" selection-start-line="231" selection-start-column="30" selection-end-line="231" selection-end-column="30" />
+        <state relative-caret-position="3616">
+          <caret line="233" column="44" selection-start-line="233" selection-start-column="44" selection-end-line="233" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/beechie.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1792">
+          <caret line="121" selection-start-line="121" selection-end-line="121" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files (x86)/ArcGIS/Desktop10.6/arcpy/arcpy/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="1095" column="4" selection-start-line="1095" selection-start-column="4" selection-end-line="1095" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/aconditioning_dem.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="145" column="26" selection-start-line="145" selection-start-column="4" selection-end-line="145" selection-end-column="26" />
+          <folding>
+            <element signature="e#25#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/add_attribute.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="129" column="66" lean-forward="true" selection-start-line="129" selection-start-column="66" selection-end-line="129" selection-end-column="66" />
+          <folding>
+            <element signature="e#46#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/cluster.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="143" column="25" lean-forward="true" selection-start-line="143" selection-start-column="25" selection-end-line="143" selection-end-column="25" />
         </state>
       </provider>
     </entry>

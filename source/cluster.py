@@ -134,8 +134,8 @@ def main(env):
         assign_class(uttl, combine_values)
 
     else:
-        uttl = r'E:\TEST\results\UTTL.gdb\UTTL_Basins'  # UTTL Polygons
-        cluster_fields = 'Flores;SimboloUC;Slope;WB'
+        uttl = r'C:/Users/jchav/AH_03/results/UTTL.gdb/UTTL_Basins'  # UTTL Polygons
+        cluster_fields = 'FloresNew;Qmax_Class;BeechieNew;Lang_Class;regimen'
         id_uttl = u'Name'
 
         ls_cluster_fields = cluster_fields.split(";")
@@ -151,4 +151,4 @@ def main(env):
 
 
 if __name__ == '__main__':
-    main(env=True)
+    main(env=False)
