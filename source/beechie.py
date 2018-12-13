@@ -175,7 +175,7 @@ def fn_beechie(raster, drain_shape, uttl_basins, fac, workspace, CTr, qTr):
     gp.AddMessage('Classification of streams alignment based on slope-flow thresholds ... ')
 
     df_stats['Beechie'] = None
-    df_stats['BeechieClass'] = 'Inconfinados'
+    df_stats['BeechieNew'] = 'Inconfinados'
     df_stats['Smax'] = 0.1 * (df_stats['Qmax'] ** -0.42)
     df_stats['Smin'] = 0.05 * (df_stats['Qmax'] ** -0.61)
 
@@ -186,11 +186,11 @@ def fn_beechie(raster, drain_shape, uttl_basins, fac, workspace, CTr, qTr):
     df_stats.ix[df_stats[(df_stats['Slope'] > df_stats['Smin']) & (df_stats['Slope'] < df_stats['Smax']) & (df_stats['Qmax'] > 15.) & (df_stats['DoC'] > 4.)].index, 'Beechie'] = 'Trenzados-Islas'
 
     # Beechie Reclass
-    df_stats.ix[df_stats[df_stats['Beechie'] == 'Confinados'].index, 'BeechieClass'] = 'Confinados'
+    df_stats.ix[df_stats[df_stats['Beechie'] == 'Confinados'].index, 'BeechieNew'] = 'Confinados'
 
     df_stats.index = [str(i) for i in df_stats.index]
     df_stats.index.name = 'Code'
-    df_stats[['w_valley', 'WB', 'DoC', 'Qmax', 'Qmax_Class', 'Smax', 'Smin', 'Beechie', 'BeechieClass']].to_csv('{}/Beechie_Table.csv'.format(temp_folder), index_label='Code')
+    df_stats[['w_valley', 'WB', 'DoC', 'Qmax', 'Qmax_Class', 'Smax', 'Smin', 'Beechie', 'BeechieNew']].to_csv('{}/Beechie_Table.csv'.format(temp_folder), index_label='Code')
 
     arcpy.TableToTable_conversion('{}/Beechie_Table.csv'.format(temp_folder), workspace, 'Beechie')
 

@@ -37,7 +37,7 @@ def flores_class(table, workspace):
     df_table = pd.read_csv(table, index_col='Name')
     df_table['SPI'] = df_table['Slope'] * df_table['Areas_Km2'] ** 0.4
     df_table['Flores'] = None
-    df_table['Flores_class'] = None
+    df_table['FloresNew'] = None
 
     df_table.ix[df_table[(df_table['Slope'] <= 0.025) & (df_table['SPI'] <= 0.055)].index, 'Flores'] = 'Pool-riffle'
     df_table.ix[df_table[(df_table['Slope'] <= 0.025) & (df_table['SPI'] > 0.055)].index, 'Flores'] = 'Plane-bed'
@@ -46,11 +46,9 @@ def flores_class(table, workspace):
     df_table.index = df_table.index.map(unicode)
 
     # Flores Reclassification
-    df_table.ix[df_table[(df_table['Flores'] == 'Step-pool') or (df_table['Flores'] == 'Cascade')].index,
-                'Flores_class'] = 'Lim_Suministro'
+    df_table.ix[df_table[(df_table['Flores'] == 'Step-pool') | (df_table['Flores'] == 'Cascade')].index, 'FloresNew'] = ['Lim_Suministro']
 
-    df_table.ix[df_table[(df_table['Flores'] == 'Pool-riffle') or (df_table['Flores'] == 'Plane-bed')].index,
-                'Flores_class'] = 'Lim_Capacidad'
+    df_table.ix[df_table[(df_table['Flores'] == 'Pool-riffle') | (df_table['Flores'] == 'Plane-bed')].index, 'FloresNew'] = ['Lim_Capacidad']
 
     df_table.to_csv(os.path.join(folder, r'temp/TableFloresClassification.csv'), index_label='Name')
     arcpy.Delete_management(os.path.join(workspace, 'TableFloresClassificationJoin'))
@@ -179,7 +177,7 @@ def flores(workspace, uttl, erase_garbage=False):
     arcpy.CopyFeatures_management('UTTL', os.path.join(folder, r'temp/UTTL_Flores.shp'))
 
     field_obj_list = arcpy.ListFields(os.path.join(folder, r'temp/UTTL_Flores.shp'))
-    keep_field = ['FID', 'Shape', 'Name', 'Areas_Km2', 'Slope', 'Flores', 'Flores_class']
+    keep_field = ['FID', 'Shape', 'Name', 'Areas_Km2', 'Slope', 'Flores', 'FloresNew']
     arcpy.DeleteField_management(os.path.join(folder, r'temp/UTTL_Flores.shp'),
                                  [x.name for x in field_obj_list if x.name not in keep_field])
 
