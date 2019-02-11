@@ -59,7 +59,8 @@ def knickpoints_extract(raw_dem, shape_out, drain_network, folder, eq, gdb, epsg
     drain_2D = drain_network
 
     if not arcpy.Exists(os.path.join(folder, '{}.gdb'.format(gdb), 'Drain3D')):
-        ArcHydroTools.Construct3DLine(in_line2d_features=drain_2D, in_rawdem_raster=raw_dem,
+        arcpy.gp.RasterCalculator_sa('Con(IsNull("{}"),0,"{}")'.format(raw_dem, raw_dem), r'{}\RawDEM_ZeroSet.tif'.format(temp_folder))
+        ArcHydroTools.Construct3DLine(in_line2d_features=drain_2D, in_rawdem_raster=r'{}\RawDEM_ZeroSet.tif'.format(temp_folder),
                                       out_line3d_features=os.path.join(folder, '{}.gdb'.format(gdb), 'Drain3D'))
 
     if not arcpy.Exists(os.path.join(folder, '{}.gdb'.format(gdb), 'SmoothDrain3D_UTM')):
@@ -196,13 +197,13 @@ def main(env):
         gdb_name = gp.GetParameterAsText(5)
         epsg = gp.GetParameterAsText(6)
     else:
-        dem_path = r'D:\AH_03\data\srtm_orinoco_plus_500_3117.tif'
+        dem_path = r'C:\Users\jchav\AH_01\CATATUMBO\data\DEM_Raw_Init_Catatumbo_Plus_750_3116.tif'
         equidistant = 200
         knick_name = r'knickpoints'
-        drainage_line_path = r'D:\AH_03\results\UTTL.gdb\drainage_line'
-        folder = r'D:\AH_03\results'
+        drainage_line_path = r'C:\Users\jchav\AH_01\CATATUMBO\results\UTTL.gdb\drainage_line'
+        folder = r'C:\Users\jchav\AH_01\CATATUMBO\results'
         gdb_name = r'UTTL'
-        epsg = 3117
+        epsg = 3116
 
     knickpoints_extract(raw_dem=dem_path,
                         shape_out=knick_name,

@@ -1,68 +1,90 @@
 # -*- coding: utf-8 -*-
-import sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
+import arcgisscripting
+import os
+
 import arcpy
-import ArcHydroTools
-from arcpy.sa import *
-import string,os,time,exceptions,arcgisscripting
-import ArcHydroTools
-import math
-from Funciones import preproc
-from Funciones import nodhidro
-from Funciones import nodtopo
-from Funciones import batc_points
-from Funciones import gen_subwatershed
-#Definiendo la referencia espacial
-src=arcpy.SpatialReference(3116)
-# Geoprocessor object
-gp = arcgisscripting.create()
 
-#Chequeando la extencion spatial
-arcpy.CheckOutExtension("Spatial")
+from aconditioning_dem import dem_conditioning
+from batch_points import merge_points
+from hydro_points import extract_hydro_points
+from knickpoints import knickpoints_extract, knickpoints_filter
+from segmentation import uttl_maker
 
-#Obteniendo datos desde el usuario
 
-d=arcpy.GetParameterAsText(0) # Dem
-FldSla = arcpy.GetParameterAsText(1) #Folder de salida
-Nombregdb=arcpy.GetParameterAsText(2)#Nombre GDB
-RedOpcional=arcpy.GetParameterAsText(3)
-Umbral=arcpy.GetParameterAsText(4)#este umbral solo sirve para generar el condit pero no la red drenaje.
-mostrar=arcpy.GetParameterAsText(5)
-gdb_ruta=os.path.join(FldSla, Nombregdb+".gdb")
-if os.path.exists(gdb_ruta) == True:
-    arcpy.Delete_management(gdb_ruta)
+def save_mxd(folder, name):
+    mapdoc = arcpy.mapping.MapDocument('CURRENT')
+    mapdoc.saveACopy(os.path.join(folder, '{}.mxd'.format(name)))
 
-laGDB=arcpy.CreateFileGDB_management(FldSla, Nombregdb+".gdb")
 
-Textogdb=str(laGDB)
-arcpy.env.addOutputsToMap = mostrar
-laescala=arcpy.GetParameterAsText(6)
-ladistancia=arcpy.GetParameterAsText(7)
+def clear_layers():
+    mxd = arcpy.mapping.MapDocument('CURRENT')
+    for df in arcpy.mapping.ListDataFrames(mxd):
+        for lyr in arcpy.mapping.ListLayers(mxd, "", df):
+            arcpy.mapping.RemoveLayer(df, lyr)
+    del mxd
+
+
+def main(env):
+    arcpy.CheckOutExtension('Spatial')
+    gp = arcgisscripting.create()
+
+    if env:
+        # from ArcMap
+        # User input data
+        dem_path = arcpy.GetParameterAsText(0)
+        folder_out_path = arcpy.GetParameterAsText(1)
+        gdb_name = arcpy.GetParameterAsText(2)
+        drain_burning = arcpy.GetParameterAsText(3)
+        threshold = arcpy.GetParameterAsText(4)
+        show_layers = arcpy.GetParameterAsText(5)
+        epsg = arcpy.GetParameterAsText(6)
+        make_fill = arcpy.GetParameterAsText(7)
+
+        equidistant = gp.GetParameter(8)
+        knick_name = gp.GetParameterAsText(9)
+
+        hydro_zone = gp.GetParameter(10)
+        mxd_project = gp.GetParameter(11)
+
+    else:
+        # from console
+        dem_path = r'C:\Users\jchav\AH_01\CATATUMBO\data\HydroDEM_Catatumbo.tif'
+        folder_out_path = r'C:\Users\jchav\AH_01\CATATUMBO\results'
+        gdb_name = 'UTTL'
+        drain_burning = ''
+        threshold = 324  # TODO: estimate the threshold from the scale and resolution of dem
+        show_layers = False
+        epsg = 3116
+        make_fill = False
+
+        equidistant = 200
+        knick_name = 'knickpoints'
+
+        hydro_zone = 11
+        mxd_project = 'Untiled'
+
+    save_mxd(folder=folder_out_path, name=mxd_project)
+    arcpy.env.workspace = folder_out_path
+    arcpy.env.overwriteOutput = True
+    if not os.path.exists(os.path.join(folder_out_path, '{}.gdb'.format(gdb_name))):
+        arcpy.CreateFileGDB_management(folder_out_path, '{}.gdb'.format(gdb_name))
+
+    gdb_path = os.path.join(folder_out_path, '{}.gdb'.format(gdb_name))
+    dem_conditioning(dem=dem_path, folder=folder_out_path, gdb=gdb_name, threshold=threshold, show=show_layers, epsg=epsg, fill=make_fill, drain_network=drain_burning)
+    drain_network = os.path.join(folder_out_path, '{}.gdb'.format(gdb_name), 'drainage_line')
+    extract_hydro_points(drain=drain_network, show=show_layers, folder=folder_out_path, gdb=gdb_name)
+    knickpoints_extract(raw_dem=dem_path, shape_out=knick_name, drain_network=drain_network, folder=folder_out_path, eq=equidistant, gdb=gdb_name, epsg=epsg)
+    knickpoints_filter(folder=folder_out_path, gdb=gdb_name, knick=knick_name)
+    topog_points = os.path.join(folder_out_path, '{}.gdb'.format(gdb_name), 'knickpoints_filter')
+    hydro_points = os.path.join(folder_out_path, '{}.gdb'.format(gdb_name), 'hydro_points')
+    merge_points(knickpoints=topog_points, hydropoints=hydro_points, folder_out=folder_out_path, gdb=gdb_path, zone=hydro_zone)
+
+    batchpoints_path = os.path.join(gdb_path, 'BatchPoints')
+    fdr = os.path.join(gdb_path, 'fdr')
+    str_stream = os.path.join(gdb_path, 'Str')
+    uttl_maker(flow_grid=fdr, stream_grid=str_stream, batch_point=batchpoints_path, basins='UTTL_Basins', workspace=gdb_path)
+    clear_layers()
 
 
 if __name__ == '__main__':
-
-    preproc(d, FldSla, Nombregdb, RedOpcional,Umbral)
-
-    strfeature=os.path.join(Textogdb,"StreamFeature")
-    strraster=os.path.join(Textogdb,"Str")
-    fdr=os.path.join(Textogdb,"Fdr")
-    fac=os.path.join(Textogdb,"Fac")
-    gp.SetProgressor("default", "Nodos hidrologicos")
-    gp.AddMessage("realizando nodos hidro...")
-    nodhidro(strfeature,strraster,fdr,Textogdb)
-    gridv=os.path.join(Textogdb,"hydroDEM")
-    gp.SetProgressor("default", "Nodos topograficos")
-    gp.AddMessage("realizando nodos topograficos...")
-    dirtemp=os.path.dirname(Textogdb)
-    nodtopo(gridv,laescala, fdr,strraster,strfeature,ladistancia, Textogdb)
-    topo=os.path.join(Textogdb,"Nodos_topograficos")
-    hidro=os.path.join(Textogdb,"nodos_hidro")
-    batc_points(topo,hidro,Textogdb)
-    gp.SetProgressor("default", "Batchpoints")
-    gp.AddMessage("realizando batchpoints...")
-    lospuntos=os.path.join(Textogdb,"BatchPoints_F")
-    gp.SetProgressor("default", "Nodos subwatersheds")
-    gp.AddMessage("realizando subwatershed...")
-    gen_subwatershed(lospuntos,fdr,strraster, Textogdb)
+    main(env=True)

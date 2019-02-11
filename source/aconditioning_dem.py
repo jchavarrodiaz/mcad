@@ -132,13 +132,13 @@ def main(env):
         make_fill = arcpy.GetParameterAsText(7)
     else:
         # from console
-        dem_path = r'D:\AH_03\data\HydroDEM_Orinoco_plus_500_3117.tif'
-        folder_out_path = r'D:\AH_03\results'
+        dem_path = r'C:\Users\jchav\AH_01\CATATUMBO\data\HydroDEM_Catatumbo.tif'
+        folder_out_path = r'C:\Users\jchav\AH_01\CATATUMBO\results'
         gdb_name = 'UTTL'
         drain_burning = ''
         threshold = 324  # TODO: estimate the threshold from the scale and resolution of dem
         show_layers = False
-        hydro_zone = 3117
+        hydro_zone = 3116
         make_fill = False
 
     arcpy.env.workspace = folder_out_path

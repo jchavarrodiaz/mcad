@@ -206,13 +206,13 @@ def main(env):
         hydro_zone = arcpy.GetParameterAsText(5)
         fac_path = arcpy.GetParameterAsText(6)
     else:
-        gdb_path = r'C:\Users\jchav\AH_03\results\UTTL.gdb'
-        dem_path = r'C:\Users\jchav\AH_03\data\HydroDEM_Orinoco_plus_500_3117.tif'
-        batchpoints_path = r'C:\Users\jchav\AH_03\results\UTTL.gdb\BatchPoints'
-        drain_network_path = r'C:\Users\jchav\AH_03\results\UTTL.gdb\drainage_line'
-        hydro_zone = 3117
-        uttl = r'C:\Users\jchav\AH_03\results\UTTL.gdb\UTTL_Basins'
-        fac_path = r'C:\Users\jchav\AH_03\results\UTTL.gdb\fac'
+        gdb_path = r'C:\Users\jchav\AH_01\CATATUMBO\results\UTTL.gdb'
+        dem_path = r'C:\Users\jchav\AH_01\CATATUMBO\data\DEM_Raw_Init_Catatumbo_Plus_750_3116.tif'
+        batchpoints_path = r'C:\Users\jchav\AH_01\CATATUMBO\results\UTTL.gdb\BatchPoints'
+        drain_network_path = r'C:\Users\jchav\AH_01\CATATUMBO\results\UTTL.gdb\drainage_line'
+        hydro_zone = 3116
+        uttl = r'C:\Users\jchav\AH_01\CATATUMBO\results\UTTL.gdb\UTTL_Basins'
+        fac_path = r'C:\Users\jchav\AH_01\CATATUMBO\results\UTTL.gdb\fac'
 
     gp.AddMessage('calculating slopes')
     slope_calc(batch_point=batchpoints_path,

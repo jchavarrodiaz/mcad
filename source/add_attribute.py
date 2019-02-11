@@ -57,11 +57,12 @@ def zonal_stats(feat, raster, new_name, stats='MEAN'):
     # joins must be performed on a Layer or Table View object...
     arcpy.MakeFeatureLayer_management(feat, 'Layer')
     arcpy.AddJoin_management('Layer', 'OBJECTID', table, 'OBJECTID')
+    if stats == 'MAXIMUM':
+        stats = 'MAX'
     arcpy.CalculateField_management('Layer', new_name, '!{}.{}!'.format(os.path.basename(raster).split('.')[0], stats), 'PYTHON')
-    arcpy.RemoveJoin_management('Layer', os.path.basename(raster).split('.')[0])  # not really necessary, it dissapears at the end of the script anyway
 
 
-def attribute_from_vector(feat, object, field, id_index):
+def attribute_from_vector(feat, obj, field, id_index):
     gdb_path = os.path.dirname(os.path.abspath(feat))
     arcpy.env.workspace = '{}'.format(os.path.dirname(os.path.abspath(gdb_path)))
     arcpy.env.overwriteOutput = True
@@ -83,7 +84,7 @@ def attribute_from_vector(feat, object, field, id_index):
         arcpy.DeleteField_management(feat, field)
 
     gp.AddMessage('Intersect Analysis')
-    arcpy.Intersect_analysis(in_features='{} #;{} #'.format(feat, object),
+    arcpy.Intersect_analysis(in_features='{} #;{} #'.format(feat, obj),
                              out_feature_class='{}/UTTL_Basins_Intersect'.format(temp_folder),
                              join_attributes='NO_FID', cluster_tolerance="-1 Unknown",
                              output_type='INPUT')
@@ -137,7 +138,7 @@ def add_attribute(object, feature, stats, new_att, uttl):
     if filetype == u'RasterDataset':
         zonal_stats(feat=feature, raster=object, new_name=new_att, stats=stats)
     elif (filetype == u'ShapeFile') or (filetype == u'FeatureClass'):
-        attribute_from_vector(feat=feature, object=object, field=new_att, id_index=uttl)
+        attribute_from_vector(feat=feature, obj=object, field=new_att, id_index=uttl)
     else:
         gp.AddMessage('El archivo ingresado no corresponde con un formato matricial o vectorial')
 
@@ -156,9 +157,9 @@ def main(env):
         add_attribute(object=new_object, feature=uttl_feature, stats=stats_type, new_att=new, uttl=id_uttl_name)
 
     else:
-        uttl_feature = r'C:\Users\jchav\AH_03\results\UTTL.gdb\UTTL_Basins'  # UTTL Polygons
+        uttl_feature = r'C:\Users\jchav\AH_01\CATATUMBO\results\UTTL.gdb\UTTL_Basins'  # UTTL Polygons
         id_uttl_name = 'Name'
-        new_object = r'C:\Users\jchav\AH_03\data\Regimen_Hidrologico\Regimen_Hidrologico_Orinoco_3117.shp'  # new object (raster or vector) for from extract new information and add to attribute table of uttl units
+        new_object = r'C:\Users\jchav\AH_01\CATATUMBO\data\Regimen_Hidrologico\Regimen_Hidrologico_3116.shp'  # new object (raster or vector) for from extract new information and add to attribute table of uttl units
         stats_type = 'MEAN'  # MEAN, MODE, ..., etc.
         field_new_name = u'regimen'  # new name for uttl's attribute [the field name with less of 10 characters]
 
@@ -168,4 +169,4 @@ def main(env):
 
 
 if __name__ == '__main__':
-    main(env=False)
+    main(env=True)

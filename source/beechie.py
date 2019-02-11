@@ -153,16 +153,25 @@ def fn_beechie(raster, drain_shape, uttl_basins, fac, workspace, CTr, qTr):
     arcpy.gp.ZonalStatisticsAsTable_sa(uttl_basins, "Name", '{}/Qmax'.format(workspace), '{}/Qmax_stats'.format(temp_folder), "DATA", "MAXIMUM")
     arcpy.TableToTable_conversion('{}/Qmax_stats'.format(temp_folder), temp_folder, 'Qmax_stats.csv')
     df_stats['Qmax'] = pd.read_csv('{}/Qmax_stats.csv'.format(temp_folder), index_col='NAME')['MAX']
-    # Qmax Classification
-    df_stats['Qmax_Class'] = 'Alto'
 
-    low = np.percentile(df_stats['Qmax'], 25)
-    low_medium = np.percentile(df_stats['Qmax'], 50)
-    high_medium = np.percentile(df_stats['Qmax'], 75)
+    # Qmax Classification
+    df_stats['Qmax_Class'] = 'Muy Alto'
+
+    # low = np.percentile(df_stats['Qmax'], 25)
+    # low_medium = np.percentile(df_stats['Qmax'], 50)
+    # high_medium = np.percentile(df_stats['Qmax'], 75)
+
+    low = 150
+    medium_low = 300
+    medium = 600
+    medium_high = 1200
+    high = 2400
 
     df_stats.ix[df_stats[df_stats['Qmax'] < low].index, 'Qmax_Class'] = 'Bajo'
-    df_stats.ix[df_stats[(df_stats['Qmax'] >= low) & (df_stats['Qmax'] < low_medium)].index, 'Qmax_Class'] = 'Medio Bajo'
-    df_stats.ix[df_stats[(df_stats['Qmax'] >= low_medium) & (df_stats['Qmax'] < high_medium)].index, 'Qmax_Class'] = 'Medio Alto'
+    df_stats.ix[df_stats[(df_stats['Qmax'] >= low) & (df_stats['Qmax'] < medium_low)].index, 'Qmax_Class'] = 'Medio Bajo'
+    df_stats.ix[df_stats[(df_stats['Qmax'] >= medium_low) & (df_stats['Qmax'] < medium)].index, 'Qmax_Class'] = 'Medio'
+    df_stats.ix[df_stats[(df_stats['Qmax'] >= medium) & (df_stats['Qmax'] < medium_high)].index, 'Qmax_Class'] = 'Medio Alto'
+    df_stats.ix[df_stats[(df_stats['Qmax'] >= medium_high) & (df_stats['Qmax'] < high)].index, 'Qmax_Class'] = 'Alto'
 
     df_stats['Slope'] = df_uttl['Slope']
 
@@ -203,15 +212,6 @@ def fn_beechie(raster, drain_shape, uttl_basins, fac, workspace, CTr, qTr):
     arcpy.CopyFeatures_management(os.path.join(temp_folder, r'UTTL_Beechie.shp'), os.path.join(workspace, r'UTTL_Basins'))
 
 
-def temp():
-    df_stats = pd.ExcelFile('D:/Work/POTENTIAL_ARCPY/TEST/results/temp/Beechie_Table.xls').parse('Beechie', index_col='Code')
-    df_stats.ix[df_stats[df_stats['DoC'] < 4.].index, 'Beechie'] = 'Confinados'
-    df_stats.ix[df_stats[(df_stats['Slope'] > df_stats['Smax']) & (df_stats['DoC'] > 4.)].index, 'Beechie'] = 'Trenzados'
-    df_stats.ix[df_stats[(df_stats['Slope'] < df_stats['Smax']) & (df_stats['Qmax'] < 15.) & (df_stats['DoC'] > 4.)].index, 'Beechie'] = 'Rectos'
-    df_stats.ix[df_stats[(df_stats['Slope'] < df_stats['Smin']) & (df_stats['Qmax'] > 15.) & (df_stats['DoC'] > 4.)].index, 'Beechie'] = 'Meandricos'
-    df_stats.ix[df_stats[(df_stats['Slope'] > df_stats['Smin']) & (df_stats['Slope'] < df_stats['Smax']) & (df_stats['Qmax'] > 15.) & (df_stats['DoC'] > 4.)].index, 'Beechie'] = 'Trenzados-Islas'
-
-
 def main(env):
     gp = arcgisscripting.create()
     gp.CheckOutExtension("Spatial")
@@ -232,8 +232,8 @@ def main(env):
         par9 = gp.GetParameterAsText(12)
         par10 = gp.GetParameterAsText(13)
     else:
-        mdt_file = r'C:\Users\jchav\AH_03\data\srtm_orinoco_plus_500_3117.tif'
-        gdb_path = r'C:\Users\jchav\AH_03\results\UTTL.gdb'
+        mdt_file = r'C:\Users\jchav\AH_01\CATATUMBO\data\DEM_Raw_Init_Catatumbo_Plus_750_3116.tif'
+        gdb_path = r'C:\Users\jchav\AH_01\CATATUMBO\results\UTTL.gdb'
         name_out = 'mrvbf'
         par1 = 8
         par2 = 0.4
@@ -241,11 +241,11 @@ def main(env):
         par4 = 4
         par5 = 3
         show = True
-        par6 = r'C:\Users\jchav\AH_03\results\UTTL.gdb\Drain_UTTL'
-        par7 = r'C:\Users\jchav\AH_03\results\UTTL.gdb\UTTL_Basins'
-        par8 = r'C:\Users\jchav\AH_03\results\UTTL.gdb\fac'
-        par9 = r'C:\Users\jchav\AH_03\data\Qmax_Regional_UPME_CTr.tif'
-        par10 = r'C:\Users\jchav\AH_03\data\Qmax_Regional_UPME_qTr.tif'
+        par6 = r'C:\Users\jchav\AH_01\CATATUMBO\results\UTTL.gdb\Drain_UTTL'
+        par7 = r'C:\Users\jchav\AH_01\CATATUMBO\results\UTTL.gdb\UTTL_Basins'
+        par8 = r'C:\Users\jchav\AH_01\CATATUMBO\results\UTTL.gdb\fac'
+        par9 = r'C:\Users\jchav\AH_01\CATATUMBO\data\Qmax_Regional_UPME_CTr.tif'
+        par10 = r'C:\Users\jchav\AH_01\CATATUMBO\data\Qmax_Regional_UPME_qTr.tif'
 
     gp.AddMessage('Making temps folders')
     temp_folder = r'{}\temp'.format(os.path.dirname(os.path.abspath(gdb_path)))
@@ -255,14 +255,13 @@ def main(env):
     else:
         os.mkdir(temp_folder)
 
-    # gp.AddMessage('Running SAGA - MRVBF')
-    # import_data_to_saga(mdt_file, temp_folder)
-    # run_mrvbf(temp=temp_folder, t_slope=par1, tv=par2, tr=par3, p_slope=par4, p=par5)
-    # export_data_from_saga(temp_folder, out_grid=name_out, gdb=gdb_path, show=show)
+    gp.AddMessage('Running SAGA - MRVBF')
+    import_data_to_saga(mdt_file, temp_folder)
+    run_mrvbf(temp=temp_folder, t_slope=par1, tv=par2, tr=par3, p_slope=par4, p=par5)
+    export_data_from_saga(temp_folder, out_grid=name_out, gdb=gdb_path, show=show)
     gp.AddMessage('Running Beechie')
     fn_beechie(raster='{}/{}'.format(gdb_path, name_out), drain_shape=par6, uttl_basins=par7, fac=par8, workspace=gdb_path, CTr=par9, qTr=par10)
 
 
 if __name__ == "__main__":
-    # temp()
     main(env=False)

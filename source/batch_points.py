@@ -38,7 +38,10 @@ def merge_points(knickpoints, hydropoints, folder_out, gdb, zone):
     arcpy.AddField_management(os.path.join(gdb, 'BatchPoints'),
                               'SrcType', 'TEXT', 9, "", "", 'SrcType', 'NULLABLE', 'REQUIRED')
 
-    start_code = {1: 1000000,
+    start_code = {11: 1100000,
+                  12: 1200000,
+                  13: 1300000,
+                  14: 1400000,
                   2: 2000000,
                   3: 3000000,
                   4: 4000000,
@@ -65,10 +68,10 @@ def main(env):
         hydro_points = arcpy.GetParameterAsText(2)
         hydro_zone = arcpy.GetParameter(3)
     else:
-        gdb_path = r'D:\AH_03\results\UTTL.gdb'
-        topog_points = r'D:\AH_03\results\UTTL.gdb\knickpoints_filter'
-        hydro_points = r'D:\AH_03\results\UTTL.gdb\hydro_points'
-        hydro_zone = 3
+        gdb_path = r'C:\Users\jchav\AH_01\CATATUMBO\results\UTTL.gdb'
+        topog_points = r'C:\Users\jchav\AH_01\CATATUMBO\results\UTTL.gdb\knickpoints_filter'
+        hydro_points = r'C:\Users\jchav\AH_01\CATATUMBO\results\UTTL.gdb\hydro_points'
+        hydro_zone = 14
 
     folder = os.path.dirname(gdb_path)
     merge_points(knickpoints=topog_points, hydropoints=hydro_points, folder_out=folder, gdb=gdb_path, zone=hydro_zone)
