@@ -75,7 +75,7 @@ def unique_values(layer, fields, f_types, id):
     return unique_value_fields, fields
 
 
-def combine(t_class):
+def combine(t_class, prefix):
     """ This function generate all combinations between unique values in all fields """
     unique_class = chain.from_iterable(t_class)
     combined_list = list(combinations(unique_class, len(t_class)))
@@ -84,11 +84,11 @@ def combine(t_class):
     combined_list = [elem for elem in combined_list if len(elem) == len(t_class)]
     for i, j in zip(combined_list, range(len(combined_list))):
         if len(i) == len(t_class):
-            final_clases['MC-{}'.format(j)] = "_".join(i)
+            final_clases['{}-{}'.format(prefix, j)] = "_".join(i)
     return final_clases
 
 
-def assign_class(layer, t_class):
+def assign_class(layer, t_class, prefix):
     """ assign the classes consecutively """
     arcpy.AddField_management(layer, "classified", "TEXT")
     fields = ["new_class", "classified"]
@@ -110,7 +110,7 @@ def assign_class(layer, t_class):
         for s_row in class_field_rows:
             for c, j in zip(class_accept, range(len(class_accept))):
                 if s_row[0] == c:
-                    s_row[-1] = 'MC-{}'.format(j)
+                    s_row[-1] = '{}-{}'.format(prefix, j)
             class_field_rows.updateRow(s_row)
         del s_row
     arcpy.DeleteField_management(layer, "new_class;classified")
@@ -121,6 +121,7 @@ def main(env):
         uttl = arcpy.GetParameterAsText(0)
         cluster_fields = arcpy.GetParameterAsText(1)
         id_uttl = arcpy.GetParameterAsText(2)
+        prefix = arcpy.GetParameterAsText(3)
 
         ls_cluster_fields = cluster_fields.split(";")
         ls_dict = [{i.name: i.type} for i in arcpy.ListFields(uttl)]
@@ -130,13 +131,14 @@ def main(env):
 
         unival, update_field_list = unique_values(uttl, ls_cluster_fields, field_types, id_uttl)
         calculate_grouped_field(uttl, update_field_list)
-        combine_values = combine(unival)
-        assign_class(uttl, combine_values)
+        combine_values = combine(unival, prefix)
+        assign_class(uttl, combine_values, prefix)
 
     else:
         uttl = r'C:\Users\jchav\AH_01\CATATUMBO\results\UTTL.gdb\UTTL_Basins'  # UTTL Polygons
         cluster_fields = 'FloresNew;Qmax_Class;BeechieNew;Lang_Class;regimen'
         id_uttl = u'Name'
+        prefix = u'CT'
 
         ls_cluster_fields = cluster_fields.split(";")
         ls_dict = [{i.name: i.type} for i in arcpy.ListFields(uttl)]
@@ -146,8 +148,8 @@ def main(env):
 
         unival, update_field_list = unique_values(uttl, ls_cluster_fields, field_types, id_uttl)
         calculate_grouped_field(uttl, update_field_list)
-        combine_values = combine(unival)
-        assign_class(uttl, combine_values)
+        combine_values = combine(unival, prefix)
+        assign_class(uttl, combine_values, prefix)
 
 
 if __name__ == '__main__':

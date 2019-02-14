@@ -32,12 +32,12 @@ def zonal_stats(feat, raster, new_name, stats='MEAN'):
     arcpy.env.overwriteOutput = True
     arcpy.env.qualifiedFieldNames = False
 
-    gp.AddMessage('Making temps folders')
     temp_folder = '{}/temp'.format(os.path.dirname(os.path.abspath(gdb_path)))
 
     if os.path.exists(temp_folder):
         gp.AddMessage('folder temp already exists')
     else:
+        gp.AddMessage('Making temps folders')
         os.mkdir(temp_folder)
 
     gp.AddMessage("Performing Zonal Statistics as Table")
@@ -68,19 +68,19 @@ def attribute_from_vector(feat, obj, field, id_index):
     arcpy.env.overwriteOutput = True
     arcpy.env.qualifiedFieldNames = False
 
-    gp.AddMessage('Making temps folders')
     temp_folder = r'{}\temp'.format(os.path.dirname(os.path.abspath(gdb_path)))
 
     if os.path.exists(temp_folder):
         gp.AddMessage('folder temp already exists')
     else:
+        gp.AddMessage('Making temp folder')
         os.mkdir(temp_folder)
 
     # check if the 'to' field exists and if not found then add it
     if len(arcpy.ListFields(feat, field)) == 0:
-        gp.AddMessage('the {} field doesnt exist'.format(field))
+        gp.AddMessage('the {} field does not exist'.format(field))
     else:
-        gp.AddMessage('The {} field already exits'.format(field))
+        gp.AddMessage('The {} field already exits ... Deleting'.format(field))
         arcpy.DeleteField_management(feat, field)
 
     gp.AddMessage('Intersect Analysis')
@@ -108,18 +108,10 @@ def attribute_from_vector(feat, obj, field, id_index):
 
     df_join_table.to_csv('{}/UTTL_Basins_NewVectorAttribute.csv'.format(temp_folder))
 
-    # check if the 'to' field exists and if not found then add it
-    if len(arcpy.ListFields(feat, field)) == 0:
-        gp.AddMessage('Adding {} field'.format(field))
-        arcpy.AddField_management(feat, field, 'TEXT')
-    else:
-        gp.AddMessage('Deleting {} field'.format(field))
-        arcpy.DeleteField_management(feat, field)
-        gp.AddMessage('Adding {} field'.format(field))
-        arcpy.AddField_management(feat, field, 'TEXT')
+    arcpy.AddField_management(feat, field, 'TEXT')
 
     x = np.array(np.rec.fromrecords(df_join_table.values))
-    names = df_join_table.dtypes.index.tolist()
+    names = map(str, df_join_table.dtypes.index.tolist())
     x.dtype.names = tuple(names)
     arcpy.da.NumPyArrayToTable(x, r'{}\{}'.format(gdb_path, field))
 
@@ -153,7 +145,6 @@ def main(env):
         field_new_name = arcpy.GetParameterAsText(4)  # new name for uttl's attribute
 
         new = unicodedata.normalize('NFD', field_new_name).encode('ascii', 'ignore')
-
         add_attribute(object=new_object, feature=uttl_feature, stats=stats_type, new_att=new, uttl=id_uttl_name)
 
     else:
@@ -164,7 +155,6 @@ def main(env):
         field_new_name = u'regimen'  # new name for uttl's attribute [the field name with less of 10 characters]
 
         new = unicodedata.normalize('NFD', field_new_name).encode('ascii', 'ignore')
-
         add_attribute(object=new_object, feature=uttl_feature, stats=stats_type, new_att=new, uttl=id_uttl_name)
 
 
