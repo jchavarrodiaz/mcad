@@ -4,9 +4,16 @@
     <list default="true" id="ca60032c-5cf9-4feb-9e17-c8547ec341d9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MCAD.tbx" beforeDir="false" afterPath="$PROJECT_DIR$/MCAD.tbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/aconditioning_dem.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/aconditioning_dem.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/add_attribute.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/add_attribute.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/batch_all_UTTL.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/batch_all_UTTL.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/batch_char.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/batch_char.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/cluster.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/cluster.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/dendritic_conectivity_index.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/dendritic_conectivity_index.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/flores.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/flores.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/rareness.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/rareness.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/representativity.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/representativity.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/segmentation.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/segmentation.py" afterDir="false" />
     </list>
     <ignored path=".idea/" />
     <ignored mask="*.pyc" />
@@ -23,10 +30,58 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/batch_char.py">
+        <entry file="file://$PROJECT_DIR$/source/cluster.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="35" column="46" lean-forward="true" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="46" />
+            <state relative-caret-position="2336">
+              <caret line="149" column="53" selection-start-line="149" selection-start-column="8" selection-end-line="149" selection-end-column="53" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/utilities.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="720">
+              <caret line="48" selection-start-line="48" selection-end-line="48" />
+              <folding>
+                <element signature="e#24#33#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/species.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="640">
+              <caret line="47" selection-start-line="47" selection-end-line="47" />
+              <folding>
+                <element signature="e#24#33#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/factors.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="32">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+              <folding>
+                <element signature="e#24#33#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/source/batch_all_UTTL.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="364">
+              <caret line="52" column="25" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
               <folding>
                 <element signature="e#24#46#0" expanded="true" />
               </folding>
@@ -35,19 +90,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/aconditioning_dem.py">
+        <entry file="file://$PROJECT_DIR$/source/dendritic_conectivity_index.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="11" column="50" lean-forward="true" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/rareness.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="9" column="46" lean-forward="true" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+            <state relative-caret-position="832">
+              <caret line="56" column="18" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
               <folding>
                 <element signature="e#24#33#0" expanded="true" />
               </folding>
@@ -58,7 +104,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/showing_things.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
+            <state relative-caret-position="432">
               <caret line="30" column="89" selection-start-line="30" selection-start-column="89" selection-end-line="30" selection-end-column="89" />
               <folding>
                 <element signature="e#24#46#0" expanded="true" />
@@ -70,8 +116,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/add_attribute.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5">
-              <caret line="57" column="52" lean-forward="true" selection-start-line="57" selection-start-column="52" selection-end-line="57" selection-end-column="52" />
+            <state relative-caret-position="320">
+              <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
               <folding>
                 <element signature="e#46#68#0" expanded="true" />
               </folding>
@@ -79,11 +125,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/representativity.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+            <state relative-caret-position="528">
+              <caret line="39" column="66" selection-start-line="39" selection-start-column="66" selection-end-line="39" selection-end-column="66" />
               <folding>
                 <element signature="e#24#33#0" expanded="true" />
               </folding>
@@ -94,8 +140,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/flores.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="181" column="94" lean-forward="true" selection-start-line="178" selection-start-column="4" selection-end-line="181" selection-end-column="94" />
+            <state relative-caret-position="64">
+              <caret line="10" selection-start-line="10" selection-end-line="12" selection-end-column="17" />
               <folding>
                 <element signature="e#24#46#0" expanded="true" />
               </folding>
@@ -122,9 +168,12 @@
       <find>epsg</find>
       <find>MC</find>
       <find>arcpy.Project_management</find>
+      <find>Alta</find>
+      <find>copy</find>
     </findStrings>
     <replaceStrings>
       <replace>GUAJIRA</replace>
+      <replace>Muy Alta</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -137,21 +186,24 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/source/make_agree_dem.py" />
-        <option value="$PROJECT_DIR$/source/aconditioning_dem.py" />
         <option value="$PROJECT_DIR$/source/hydro_points.py" />
         <option value="$PROJECT_DIR$/source/knickpoints.py" />
         <option value="$PROJECT_DIR$/source/batch_points.py" />
-        <option value="$PROJECT_DIR$/source/flores.py" />
         <option value="$PROJECT_DIR$/source/beechie.py" />
-        <option value="$PROJECT_DIR$/source/segmentation.py" />
-        <option value="$PROJECT_DIR$/source/batch_all_UTTL.py" />
-        <option value="$PROJECT_DIR$/source/batch_char.py" />
         <option value="$PROJECT_DIR$/source/showing_things.py" />
-        <option value="$PROJECT_DIR$/source/dendritic_conectivity_index.py" />
         <option value="$PROJECT_DIR$/source/add_attribute.py" />
+        <option value="$PROJECT_DIR$/source/aconditioning_dem.py" />
+        <option value="$PROJECT_DIR$/source/batch_all_UTTL.py" />
+        <option value="$PROJECT_DIR$/source/segmentation.py" />
+        <option value="$PROJECT_DIR$/source/flores.py" />
         <option value="$PROJECT_DIR$/source/cluster.py" />
+        <option value="$PROJECT_DIR$/source/batch_char.py" />
         <option value="$PROJECT_DIR$/source/rareness.py" />
+        <option value="$PROJECT_DIR$/source/utilities.py" />
         <option value="$PROJECT_DIR$/source/representativity.py" />
+        <option value="$PROJECT_DIR$/source/species.py" />
+        <option value="$PROJECT_DIR$/source/dendritic_conectivity_index.py" />
+        <option value="$PROJECT_DIR$/source/factors.py" />
       </list>
     </option>
   </component>
@@ -188,7 +240,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="D:/Python_Scripts/GeoTools/Morphometry" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -203,7 +255,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.representativity">
+  <component name="RunManager" selected="Python.species">
+    <configuration name="aconditioning_dem" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MCAD" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/aconditioning_dem.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="add_attribute" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MCAD" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -217,69 +290,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/add_attribute.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="batch_all_UTTL" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="MCAD" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/batch_all_UTTL.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="dendritic_conectivity_index" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="MCAD" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/dendritic_conectivity_index.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="rareness" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="MCAD" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/rareness.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -309,20 +319,62 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="species" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MCAD" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/species.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="utilities" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MCAD" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/utilities.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="Python.batch_all_UTTL" />
-      <item itemvalue="Python.dendritic_conectivity_index" />
-      <item itemvalue="Python.rareness" />
       <item itemvalue="Python.add_attribute" />
       <item itemvalue="Python.representativity" />
+      <item itemvalue="Python.aconditioning_dem" />
+      <item itemvalue="Python.species" />
+      <item itemvalue="Python.utilities" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.representativity" />
-        <item itemvalue="Python.rareness" />
+        <item itemvalue="Python.species" />
+        <item itemvalue="Python.utilities" />
         <item itemvalue="Python.add_attribute" />
-        <item itemvalue="Python.dendritic_conectivity_index" />
-        <item itemvalue="Python.batch_all_UTTL" />
+        <item itemvalue="Python.representativity" />
+        <item itemvalue="Python.aconditioning_dem" />
       </list>
     </recent_temporary>
   </component>
@@ -350,16 +402,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="55" y="0" width="1263" height="1087" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48688352" visible="true" weight="0.1670823" />
-      <window_info id="Structure" order="1" sideWeight="0.5131165" side_tool="true" weight="0.17705736" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48442534" weight="0.17539485" />
+      <window_info id="Structure" order="1" sideWeight="0.51557463" side_tool="true" weight="0.17539485" />
       <window_info id="Favorites" order="2" sideWeight="0.5119306" side_tool="true" weight="0.10969793" />
       <window_info id="TODO" order="3" sideWeight="0.4927235" weight="0.14506927" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32975295" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49899194" weight="0.3039742" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49798387" visible="true" weight="0.35338345" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49798387" weight="0.29001075" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Version Control" order="6" sideWeight="0.4989858" weight="0.3265306" />
@@ -434,6 +485,16 @@
           <line>60</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/source/aconditioning_dem.py</url>
+          <line>151</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/source/add_attribute.py</url>
+          <line>70</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -482,47 +543,47 @@
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>arcpy.Project_management(in_dataset=parks, out_dataset=os.path.join(temp_folder, os.path.split(parks)[-1]), out_coor_system=epsg)</expression-string>
+        <expression-string>df_spe.copy()[['sp_mean', 'sp_value', 'sp_class']]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>os.path.join(temp_folder, os.path.split(parks)[-1])</expression-string>
+        <expression-string>df_spe</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>os.path.split(parks)[-1]</expression-string>
+        <expression-string>df_criteria[df_criteria['Value']] == 2</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>os.path.split(parks)</expression-string>
+        <expression-string>df_criteria[df_criteria['Value']] == 2.</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>os.path.dirname(uttl)</expression-string>
+        <expression-string>df_criteria[df_criteria['Value'] == 2.</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>df_join.loc[:, 'Name'][0]</expression-string>
+        <expression-string>df_criteria['Value']</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>df_join.loc[:, 'Name']</expression-string>
+        <expression-string>df_criteria.ix['Media', 'Value']</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>df_join.loc[:, 'Name'] = ls_val</expression-string>
+        <expression-string>df_spe['sp_mean'].fillna(value=0, inplace=True)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>df_join</expression-string>
+        <expression-string>df_spe['sp_mean'].fillna(value=0)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -625,88 +686,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/segmentation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="e#24#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files (x86)/ArcGIS/Desktop10.6/arcpy/arcpy/geoprocessing/_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="509" selection-start-line="509" selection-end-line="509" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files (x86)/ArcGIS/Desktop10.6/arcpy/arcpy/arcobjects/_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/batch_all_UTTL.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="28" column="33" selection-start-line="27" selection-start-column="4" selection-end-line="28" selection-end-column="33" />
-          <folding>
-            <element signature="e#24#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/cluster.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="709">
-          <caret line="151" column="49" selection-start-line="151" selection-start-column="49" selection-end-line="151" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Program Files (x86)/ArcGIS/Desktop10.6/arcpy/arcpy/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16">
           <caret line="1096" column="4" selection-start-line="1096" selection-start-column="4" selection-end-line="1096" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/showing_things.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="30" column="89" selection-start-line="30" selection-start-column="89" selection-end-line="30" selection-end-column="89" />
-          <folding>
-            <element signature="e#24#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files (x86)/ArcGIS/Desktop10.6/arcpy/arcpy/management.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="9771" selection-start-line="9771" selection-end-line="9771" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files (x86)/ArcGIS/Desktop10.6/arcpy/arcpy/conversion.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2239" column="4" selection-start-line="2239" selection-start-column="4" selection-end-line="2239" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/dendritic_conectivity_index.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-          <folding>
-            <element signature="e#24#33#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -727,10 +710,146 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/flores.py">
+    <entry file="file://C:/Program Files (x86)/ArcGIS/Desktop10.6/arcpy/arcpy/conversion.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="181" column="94" lean-forward="true" selection-start-line="178" selection-start-column="4" selection-end-line="181" selection-end-column="94" />
+        <state relative-caret-position="192">
+          <caret line="2550" selection-start-line="2550" selection-end-line="2550" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files (x86)/ArcGIS/Desktop10.6/arcpy/arcpy/geoprocessing/_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="519" column="62" lean-forward="true" selection-start-line="519" selection-start-column="62" selection-end-line="519" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.3/system/python_stubs/1764415539/nt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="239" column="4" selection-start-line="239" selection-start-column="4" selection-end-line="239" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files (x86)/ArcGIS/Desktop10.6/arcpy/arcpy/mapping.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="1832" column="4" selection-start-line="1832" selection-start-column="4" selection-end-line="1832" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/aconditioning_dem.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1728">
+          <caret line="112" column="4" selection-start-line="112" selection-start-column="4" selection-end-line="112" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/segmentation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#24#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/ArcGIS10.6/Lib/site-packages/pandas/io/parsers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="1056" selection-start-line="1056" selection-end-line="1056" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files (x86)/ArcGIS/Desktop10.6/arcpy/arcpy/management.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="3529" selection-start-line="3529" selection-end-line="3529" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files (x86)/ArcGIS/Desktop10.6/arcpy/arcpy/arcobjects/_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/batch_char.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="47" column="18" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
+          <folding>
+            <element signature="e#24#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/rareness.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1376">
+          <caret line="91" column="33" selection-start-line="91" selection-start-column="33" selection-end-line="91" selection-end-column="33" />
+          <folding>
+            <element signature="e#24#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/cluster.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2336">
+          <caret line="149" column="53" selection-start-line="149" selection-start-column="8" selection-end-line="149" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/utilities.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+          <folding>
+            <element signature="e#24#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/species.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
+          <folding>
+            <element signature="e#24#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/factors.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#24#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/dendritic_conectivity_index.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="832">
+          <caret line="56" column="18" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
+          <folding>
+            <element signature="e#24#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/showing_things.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="30" column="89" selection-start-line="30" selection-start-column="89" selection-end-line="30" selection-end-column="89" />
           <folding>
             <element signature="e#24#46#0" expanded="true" />
           </folding>
@@ -739,47 +858,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/add_attribute.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5">
-          <caret line="57" column="52" lean-forward="true" selection-start-line="57" selection-start-column="52" selection-end-line="57" selection-end-column="52" />
+        <state relative-caret-position="320">
+          <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
           <folding>
             <element signature="e#46#68#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/rareness.py">
+    <entry file="file://$PROJECT_DIR$/source/representativity.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="9" column="46" lean-forward="true" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+        <state relative-caret-position="528">
+          <caret line="39" column="66" selection-start-line="39" selection-start-column="66" selection-end-line="39" selection-end-column="66" />
           <folding>
             <element signature="e#24#33#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/batch_char.py">
+    <entry file="file://$PROJECT_DIR$/source/flores.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="35" column="46" lean-forward="true" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="46" />
+        <state relative-caret-position="64">
+          <caret line="10" selection-start-line="10" selection-end-line="12" selection-end-column="17" />
           <folding>
             <element signature="e#24#46#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/aconditioning_dem.py">
+    <entry file="file://$PROJECT_DIR$/source/batch_all_UTTL.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="11" column="50" lean-forward="true" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/representativity.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+        <state relative-caret-position="364">
+          <caret line="52" column="25" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
           <folding>
-            <element signature="e#24#33#0" expanded="true" />
+            <element signature="e#24#46#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -4,6 +4,11 @@ from itertools import combinations, chain
 import pandas as pd
 
 
+def save_mxd():
+    mapdoc = arcpy.mapping.MapDocument('CURRENT')
+    mapdoc.save()
+
+
 def calculate_grouped_field(layer, fields):
     """ This function calculate grouped field of designed fields"""
     arcpy.AddField_management(layer, "new_class", "TEXT")
@@ -122,6 +127,8 @@ def main(env):
         cluster_fields = arcpy.GetParameterAsText(1)
         id_uttl = arcpy.GetParameterAsText(2)
         prefix = arcpy.GetParameterAsText(3)
+
+        save_mxd()
 
         ls_cluster_fields = cluster_fields.split(";")
         ls_dict = [{i.name: i.type} for i in arcpy.ListFields(uttl)]

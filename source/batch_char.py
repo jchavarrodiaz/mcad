@@ -9,9 +9,9 @@ from beechie import import_data_to_saga, run_mrvbf, export_data_from_saga, fn_be
 from showing_things import show_things
 
 
-def save_mxd(folder, name):
+def save_mxd():
     mapdoc = arcpy.mapping.MapDocument('CURRENT')
-    mapdoc.saveACopy(os.path.join(folder, '{}.mxd'.format(name)))
+    mapdoc.save()
 
 
 def clear_layers():
@@ -44,6 +44,8 @@ def main(env):
         show = gp.GetParameterAsText(13)
         par9 = gp.GetParameterAsText(14)
         par10 = gp.GetParameterAsText(15)
+
+        save_mxd()
     else:
         gdb_path = r'C:\Users\jchav\AH_01\CATATUMBO\results\UTTL.gdb'
         dem_path = r'C:\Users\jchav\AH_01\CATATUMBO\data\DEM_Raw_Init_Catatumbo_Plus_750_3116.tif'

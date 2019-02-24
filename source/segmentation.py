@@ -25,7 +25,7 @@ def uttl_maker(flow_grid, stream_grid, batch_point, basins, workspace):
     show_things(thing_path=flow_grid, lyr_name='Fdr', folder=folder)
     show_things(thing_path=stream_grid, lyr_name='Str', folder=folder)
 
-    ArcHydroTools.SetTargetLocations("HydroConfig", "Layers", folder, '{}/untitled.gdb'.format(folder))
+    ArcHydroTools.SetTargetLocations("HydroConfig", "Layers", folder, r'{}\temp\untitled.gdb'.format(folder))
     ArcHydroTools.BatchSubwatershedDelineation(os.path.join(workspace, 'DelBatchPoints'), 'Fdr', 'Str', basins, 'Subwatershed_Points')
 
     arcpy.CopyFeatures_management(basins, os.path.join(folder, 'temp/{}.shp'.format(basins)))

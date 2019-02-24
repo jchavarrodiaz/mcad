@@ -15,7 +15,6 @@ def add_layer(layer):
 
 
 def dem_conditioning(dem, folder, gdb, threshold, show, epsg, fill, drain_network=None):
-
     gp = arcgisscripting.create()
 
     arcpy.env.addOutputsToMap = show
@@ -116,7 +115,6 @@ def dem_conditioning(dem, folder, gdb, threshold, show, epsg, fill, drain_networ
 
 
 def main(env):
-
     arcpy.CheckOutExtension('Spatial')
 
     if env:

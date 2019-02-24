@@ -148,9 +148,9 @@ def main(env):
         add_attribute(object=new_object, feature=uttl_feature, stats=stats_type, new_att=new, uttl=id_uttl_name)
 
     else:
-        uttl_feature = r'C:\Users\jchav\AH_01\CATATUMBO\results\UTTL.gdb\UTTL_Basins'  # UTTL Polygons
+        uttl_feature = r'C:\DIRECTOS\results\UTTL.gdb\UTTL_Basins'  # UTTL Polygons
         id_uttl_name = 'Name'
-        new_object = r'C:\Users\jchav\AH_01\CATATUMBO\data\Regimen_Hidrologico\Regimen_Hidrologico_3116.shp'  # new object (raster or vector) for from extract new information and add to attribute table of uttl units
+        new_object = r'C:\DIRECTOS\data\Regimen_Hidrologico\Regimen_Hidrologico_3116.shp'  # new object (raster or vector) for from extract new information and add to attribute table of uttl units
         stats_type = 'MEAN'  # MEAN, MODE, ..., etc.
         field_new_name = u'regimen'  # new name for uttl's attribute [the field name with less of 10 characters]
 

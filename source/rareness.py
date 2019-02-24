@@ -7,6 +7,19 @@ import pandas as pd
 from add_attribute import zonal_stats
 
 
+def save_mxd(folder, name):
+    mapdoc = arcpy.mapping.MapDocument('CURRENT')
+    mapdoc.saveACopy(os.path.join(folder, '{}.mxd'.format(name)))
+
+
+def clear_layers():
+    mxd = arcpy.mapping.MapDocument('CURRENT')
+    for df in arcpy.mapping.ListDataFrames(mxd):
+        for lyr in arcpy.mapping.ListLayers(mxd, "", df):
+            arcpy.mapping.RemoveLayer(df, lyr)
+    del mxd
+
+
 def rareness(gdb, uttl, ah, zh, epsg, config):
 
     results_folder = os.path.dirname(gdb)
@@ -105,6 +118,8 @@ def main(env):
         epsg = 3116
         config_file = r'C:\MCAD\development\data\config_criteria.xlsx'
 
+    clear_layers()
+    save_mxd(os.path.join(os.path.dirname(gdb_path), 'temp'), 'Factores')
     rareness(gdb_path, uttl, int(ah), zh_raster, epsg, config_file)
 
 

@@ -3,10 +3,14 @@ import arcgisscripting
 import csv
 import os
 
-import ArcHydroTools
 import arcpy
 import pandas as pd
 from arcpy.sa import *
+
+
+def save_mxd():
+    mapdoc = arcpy.mapping.MapDocument('CURRENT')
+    mapdoc.save()
 
 
 def add_layer(layer):
@@ -106,8 +110,7 @@ def slope_calc(batch_point, workspace, drain, epsg, dem, uttl):
                               statistics_fields='LENGTH MAX;Shape_area MAX;Slope MAX;START_Z MAX;END_Z MIN',
                               multi_part='MULTI_PART', unsplit_lines='DISSOLVE_LINES')
 
-    arcpy.CopyFeatures_management(os.path.join(folder, r'Temp/SD3DSIDissolve.shp'), os.path.join(workspace,
-                                                                                                 r'Drain_UTTL'))
+    arcpy.CopyFeatures_management(os.path.join(folder, r'Temp/SD3DSIDissolve.shp'), os.path.join(workspace, r'Drain_UTTL'))
 
     table2csv(os.path.join(folder, r'Temp/SD3DSIDissolve.shp'), os.path.join(folder, r'Temp/TableSlope.csv'))
     df_slope = pd.read_csv(os.path.join(folder, r'Temp/TableSlope.csv'), index_col='Name')
@@ -214,6 +217,7 @@ def main(env):
         uttl = r'C:\Users\jchav\AH_01\CATATUMBO\results\UTTL.gdb\UTTL_Basins'
         fac_path = r'C:\Users\jchav\AH_01\CATATUMBO\results\UTTL.gdb\fac'
 
+    save_mxd()
     gp.AddMessage('calculating slopes')
     slope_calc(batch_point=batchpoints_path,
                workspace=gdb_path,
@@ -224,13 +228,10 @@ def main(env):
 
     gp.AddMessage('slopes calculate was successfully')
     gp.AddMessage('calculating areas')
-    areas_watershed(workspace=gdb_path,
-                    fac=fac_path,
-                    uttl=uttl)
+    areas_watershed(workspace=gdb_path, fac=fac_path, uttl=uttl)
     gp.AddMessage('areas calculate was successfully')
     gp.AddMessage('calculating flores')
-    flores(workspace=gdb_path,
-           uttl=uttl)
+    flores(workspace=gdb_path, uttl=uttl)
     gp.AddMessage('flores was successfully')
 
 

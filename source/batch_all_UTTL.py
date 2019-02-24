@@ -44,7 +44,7 @@ def main(env):
         knick_name = gp.GetParameterAsText(9)
 
         hydro_zone = gp.GetParameter(10)
-        mxd_project = gp.GetParameter(11)
+        # mxd_project = gp.GetParameter(11)
 
     else:
         # from console
@@ -61,9 +61,12 @@ def main(env):
         knick_name = 'knickpoints'
 
         hydro_zone = 11
-        mxd_project = 'Untiled'
+        # mxd_project = 'Untitled'
 
-    save_mxd(folder=folder_out_path, name=mxd_project)
+    temp = os.path.join(folder_out_path, 'temp')
+    if not os.path.isdir(temp):
+        os.mkdir(temp)
+    save_mxd(folder=temp, name='Untitled')
     arcpy.env.workspace = folder_out_path
     arcpy.env.overwriteOutput = True
     if not os.path.exists(os.path.join(folder_out_path, '{}.gdb'.format(gdb_name))):
@@ -71,6 +74,7 @@ def main(env):
 
     gdb_path = os.path.join(folder_out_path, '{}.gdb'.format(gdb_name))
     dem_conditioning(dem=dem_path, folder=folder_out_path, gdb=gdb_name, threshold=threshold, show=show_layers, epsg=epsg, fill=make_fill, drain_network=drain_burning)
+
     drain_network = os.path.join(folder_out_path, '{}.gdb'.format(gdb_name), 'drainage_line')
     extract_hydro_points(drain=drain_network, show=show_layers, folder=folder_out_path, gdb=gdb_name)
     knickpoints_extract(raw_dem=dem_path, shape_out=knick_name, drain_network=drain_network, folder=folder_out_path, eq=equidistant, gdb=gdb_name, epsg=epsg)

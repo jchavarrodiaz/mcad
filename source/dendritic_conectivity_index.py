@@ -6,6 +6,14 @@ import arcpy
 from add_attribute import zonal_stats
 
 
+def clear_layers():
+    mxd = arcpy.mapping.MapDocument('CURRENT')
+    for df in arcpy.mapping.ListDataFrames(mxd):
+        for lyr in arcpy.mapping.ListLayers(mxd, "", df):
+            arcpy.mapping.RemoveLayer(df, lyr)
+    del mxd
+
+
 def dci(fdr, out_patch, gdb_path, uttl):
 
     result_folder = os.path.dirname(gdb_path)
@@ -46,6 +54,7 @@ def main(env):
         uttl = r'C:\DIRECTOS\results\UTTL.gdb\UTTL_Basins'
         dci_output = 'dci'
 
+    clear_layers()
     dci(fdr_path, dci_output, gdb_path, uttl)
 
 
