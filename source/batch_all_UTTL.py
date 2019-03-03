@@ -48,19 +48,19 @@ def main(env):
 
     else:
         # from console
-        dem_path = r'C:\Users\jchav\AH_01\CATATUMBO\data\HydroDEM_Catatumbo.tif'
-        folder_out_path = r'C:\Users\jchav\AH_01\CATATUMBO\results'
+        dem_path = r'C:\DIRECTOS\data\HydroDEM_Directos_3116.tif'
+        folder_out_path = r'C:\DIRECTOS\results'
         gdb_name = 'UTTL'
         drain_burning = ''
         threshold = 324  # TODO: estimate the threshold from the scale and resolution of dem
         show_layers = False
         epsg = 3116
-        make_fill = False
+        make_fill = True
 
         equidistant = 200
         knick_name = 'knickpoints'
 
-        hydro_zone = 11
+        hydro_zone = 12
         # mxd_project = 'Untitled'
 
     temp = os.path.join(folder_out_path, 'temp')

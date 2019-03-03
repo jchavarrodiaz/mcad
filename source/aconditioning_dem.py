@@ -47,22 +47,15 @@ def dem_conditioning(dem, folder, gdb, threshold, show, epsg, fill, drain_networ
 
         gp.SetProgressorPosition(13)
         gp.AddMessage('Processing AgreeDem ...')
-        ArcHydroTools.DEMReconditioning(Input_Raw_DEM_Raster=os.path.join(gdb_path, r'fill'),
-                                        Input_Stream_Raster_or_Feature_Class=drain_network,
-                                        Number_of_Cells_for_Stream_Buffer=1,
-                                        Smooth_Drop_in_Z_Units=deep_burning,
-                                        Sharp_Drop_in_Z_Units=deep_burning * 10.,
-                                        Output_AGREE_DEM_Raster=os.path.join(gdb_path, r'AgreeDEM'))
+        ArcHydroTools.DEMReconditioning(os.path.join(gdb_path, r'fill'), drain_network, 1, deep_burning, deep_burning * 10., os.path.join(gdb_path, r'AgreeDEM'))
 
         gp.SetProgressorPosition(16)
         gp.AddMessage('Processing hydroDEM ...')
-        ArcHydroTools.FillSinks(Input_DEM_Raster=os.path.join(gdb_path, r'AgreeDEM'),
-                                Output_Hydro_DEM_Raster=os.path.join(gdb_path, r'fill'))
+        ArcHydroTools.FillSinks(os.path.join(gdb_path, r'AgreeDEM'), os.path.join(gdb_path, r'fill'))
 
     gp.SetProgressorPosition(20)
     gp.AddMessage('Processing Flow Direction ...')
-    ArcHydroTools.FlowDirection(Input_Hydro_DEM_Raster=os.path.join(gdb_path, r'fill'),
-                                Output_Flow_Direction_Raster=os.path.join(gdb_path, r'fdr'))
+    ArcHydroTools.FlowDirection(os.path.join(gdb_path, r'fill'), os.path.join(gdb_path, r'fdr'))
 
     gp.SetProgressorPosition(30)
     gp.AddMessage('Processing Flow Accumulation...')
@@ -149,4 +142,4 @@ def main(env):
 
 
 if __name__ == '__main__':
-    main(env=False)
+    main(env=True)

@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca60032c-5cf9-4feb-9e17-c8547ec341d9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/MCAD.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MCAD.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Check_For_Cluster.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MCAD.tbx" beforeDir="false" afterPath="$PROJECT_DIR$/MCAD.tbx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/~$finitions.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/aconditioning_dem.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/aconditioning_dem.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/batch_all_UTTL.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/batch_all_UTTL.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/knickpoints.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/knickpoints.py" afterDir="false" />
     </list>
     <ignored path=".idea/" />
     <ignored mask="*.pyc" />
@@ -21,34 +27,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/species.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="640">
-              <caret line="47" selection-start-line="47" selection-end-line="47" />
-              <folding>
-                <element signature="e#24#33#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/factors.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
-              <folding>
-                <element signature="e#24#33#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/batch_all_UTTL.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="52" column="25" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
+            <state relative-caret-position="1020">
+              <caret line="69" column="41" selection-start-line="69" selection-start-column="41" selection-end-line="69" selection-end-column="41" />
               <folding>
                 <element signature="e#24#46#0" expanded="true" />
               </folding>
@@ -56,12 +38,33 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/knickpoints.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="75" column="75" selection-start-line="75" selection-start-column="75" selection-end-line="75" selection-end-column="75" />
+              <folding>
+                <element signature="e#436#445#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/aconditioning_dem.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2380">
+              <caret line="144" column="18" selection-start-line="144" selection-start-column="18" selection-end-line="144" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SECOND">
-              <first_editor relative-caret-position="128">
-                <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="102">
+                <caret line="6" column="14" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
               </first_editor>
               <second_editor />
             </state>
@@ -71,8 +74,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/dendritic_conectivity_index.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="832">
-              <caret line="56" column="18" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
+            <state relative-caret-position="986">
+              <caret line="62" selection-start-line="62" selection-end-line="62" />
               <folding>
                 <element signature="e#24#33#0" expanded="true" />
               </folding>
@@ -83,7 +86,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/showing_things.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
+            <state relative-caret-position="459">
               <caret line="30" column="89" selection-start-line="30" selection-start-column="89" selection-end-line="30" selection-end-column="89" />
               <folding>
                 <element signature="e#24#46#0" expanded="true" />
@@ -95,7 +98,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/add_attribute.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
+            <state relative-caret-position="340">
               <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
               <folding>
                 <element signature="e#46#68#0" expanded="true" />
@@ -107,8 +110,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/representativity.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="39" column="66" selection-start-line="39" selection-start-column="66" selection-end-line="39" selection-end-column="66" />
+            <state relative-caret-position="1785">
+              <caret line="111" column="42" selection-start-line="111" selection-start-column="42" selection-end-line="111" selection-end-column="42" />
               <folding>
                 <element signature="e#24#33#0" expanded="true" />
               </folding>
@@ -119,8 +122,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/flores.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="10" selection-start-line="10" selection-end-line="12" selection-end-column="17" />
+            <state relative-caret-position="119">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
               <folding>
                 <element signature="e#24#46#0" expanded="true" />
               </folding>
@@ -166,13 +169,10 @@
       <list>
         <option value="$PROJECT_DIR$/source/make_agree_dem.py" />
         <option value="$PROJECT_DIR$/source/hydro_points.py" />
-        <option value="$PROJECT_DIR$/source/knickpoints.py" />
         <option value="$PROJECT_DIR$/source/batch_points.py" />
         <option value="$PROJECT_DIR$/source/beechie.py" />
         <option value="$PROJECT_DIR$/source/showing_things.py" />
         <option value="$PROJECT_DIR$/source/add_attribute.py" />
-        <option value="$PROJECT_DIR$/source/aconditioning_dem.py" />
-        <option value="$PROJECT_DIR$/source/batch_all_UTTL.py" />
         <option value="$PROJECT_DIR$/source/segmentation.py" />
         <option value="$PROJECT_DIR$/source/flores.py" />
         <option value="$PROJECT_DIR$/source/cluster.py" />
@@ -183,12 +183,15 @@
         <option value="$PROJECT_DIR$/source/species.py" />
         <option value="$PROJECT_DIR$/source/dendritic_conectivity_index.py" />
         <option value="$PROJECT_DIR$/source/factors.py" />
+        <option value="$PROJECT_DIR$/source/aconditioning_dem.py" />
+        <option value="$PROJECT_DIR$/source/batch_all_UTTL.py" />
+        <option value="$PROJECT_DIR$/source/knickpoints.py" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="55" />
+    <option name="x" value="1304" />
     <option name="width" value="1263" />
     <option name="height" value="1087" />
   </component>
@@ -205,13 +208,8 @@
         <subPane>
           <expand>
             <path>
-              <item name="development" type="b2602c69:ProjectViewProjectNode" />
-              <item name="development" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="development" type="b2602c69:ProjectViewProjectNode" />
-              <item name="development" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
+              <item name="MCAD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MCAD" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -220,7 +218,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="D:/Python_Scripts/GeoTools/Morphometry" />
+    <property name="last_opened_file_path" value="D:/Python_Scripts/00_TMP" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -235,28 +233,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.species">
-    <configuration name="aconditioning_dem" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="MCAD" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/aconditioning_dem.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.batch_all_UTTL">
     <configuration name="add_attribute" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MCAD" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -270,6 +247,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/add_attribute.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="batch_all_UTTL" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MCAD" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/batch_all_UTTL.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -344,17 +342,17 @@
     <list>
       <item itemvalue="Python.add_attribute" />
       <item itemvalue="Python.representativity" />
-      <item itemvalue="Python.aconditioning_dem" />
       <item itemvalue="Python.species" />
       <item itemvalue="Python.utilities" />
+      <item itemvalue="Python.batch_all_UTTL" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.batch_all_UTTL" />
         <item itemvalue="Python.species" />
         <item itemvalue="Python.utilities" />
         <item itemvalue="Python.add_attribute" />
         <item itemvalue="Python.representativity" />
-        <item itemvalue="Python.aconditioning_dem" />
       </list>
     </recent_temporary>
   </component>
@@ -381,16 +379,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="55" y="0" width="1263" height="1087" extended-state="0" />
+    <frame x="1304" y="0" width="1263" height="1087" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48442534" visible="true" weight="0.17539485" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48442534" visible="true" weight="0.18869492" />
       <window_info id="Structure" order="1" sideWeight="0.51557463" side_tool="true" weight="0.17539485" />
       <window_info id="Favorites" order="2" sideWeight="0.5119306" side_tool="true" weight="0.10969793" />
       <window_info id="TODO" order="3" sideWeight="0.4927235" weight="0.14506927" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32975295" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49899194" weight="0.3039742" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49798387" weight="0.29001075" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49798387" weight="0.2893082" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Version Control" order="6" sideWeight="0.4989858" weight="0.3265306" />
@@ -456,21 +455,6 @@
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/source/knickpoints.py</url>
-          <line>109</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/source/knickpoints.py</url>
-          <line>60</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/source/aconditioning_dem.py</url>
-          <line>151</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/source/add_attribute.py</url>
           <line>70</line>
           <option name="timeStamp" value="7" />
@@ -480,6 +464,43 @@
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>ArcHydroTools.FlowDirection(Input_Hydro_DEM_Raster='C:/DIRECTOS/results/UTTL.gdb/fill', Output_Flow_Direction_Raster=os.path.join(gdb_path, r'fdr'))</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>ArcHydroTools.FlowDirection(Input_Hydro_DEM_Raster='fill',
+                                Output_Flow_Direction_Raster=os.path.join(gdb_path, r'fdr'))</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>ArcHydroTools.FlowDirection(Input_Hydro_DEM_Raster=r_fill,
+                                Output_Flow_Direction_Raster=os.path.join(gdb_path, r'fdr'))</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>r_fill</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>r_fill = arcpy.MakeRasterLayer_management(os.path.join(gdb_path, r'fill'), 'fill')</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>ArcHydroTools.FlowDirection(Input_Hydro_DEM_Raster='fill', Output_Flow_Direction_Raster=os.path.join(gdb_path, r'fdr'))</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>ArcHydroTools.FlowDirection(Input_Hydro_DEM_Raster=os.path.join(gdb_path, r'fill'), Output_Flow_Direction_Raster=os.path.join(gdb_path, r'fdr'))</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>df_uttl = pd.read_csv(os.path.join(temp_folder, 'UTTL_table_rare.csv'), delimiter=',', index_col='Name')
     df_zh = pd.DataFrame(df_uttl.groupby(['TIPOLOGIA']).sum()['Shape_Area']).reset_index()
@@ -498,30 +519,23 @@
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>extract_length(line_3d, geometry_types)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>calc_horizontal_distance(feat_vertex[v][0], feat_vertex[v][1], feat_vertex[v - 1][0],
-                                                       feat_vertex[v - 1][1])</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>calc_horizontal_distance(feat_vertex[v][0], feat_vertex[v][1],
-                                                         feat_vertex[v - 1][0], feat_vertex[v - 1][1])</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>max(0.0001, math.log(extract_length(line_3d, geometry_types)))</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
     </expressions>
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>arcpy.MakeRasterLayer_management(os.path.join(gdb_path, r'fill'), 'fill')</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>os.path.join(gdb_path, r'fill')</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>os.path.join(gdb_path, r'fdr')</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>df_spe.copy()[['sp_mean', 'sp_value', 'sp_class']]</expression-string>
         <language-id>Python</language-id>
@@ -552,36 +566,15 @@
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>df_criteria.ix['Media', 'Value']</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>df_spe['sp_mean'].fillna(value=0, inplace=True)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>df_spe['sp_mean'].fillna(value=0)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/Program Files (x86)/ArcGIS/Desktop10.5/arcpy/arcpy/management.py" />
+    <entry file="file://$PROJECT_DIR$/../Program Files (x86)/ArcGIS/Desktop10.5/arcpy/arcpy/management.py" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://C:/Program Files (x86)/ArcGIS/Desktop10.4/arcpy/arcpy/management.py" />
-    <entry file="file://C:/Python27/ArcGIS10.6/Lib/site-packages/pandas/core/generic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="891" selection-start-line="891" selection-end-line="891" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../Program Files (x86)/ArcGIS/Desktop10.4/arcpy/arcpy/management.py" />
+    <entry file="file://$PROJECT_DIR$/../Python27/ArcGIS10.6/Lib/site-packages/pandas/core/generic.py" />
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_bundle/pydev_monkey.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -589,44 +582,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/1764415539/unicodedata.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="88" column="8" lean-forward="true" selection-start-line="88" selection-start-column="8" selection-end-line="88" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/ArcGIS10.6/Lib/site-packages/pandas/compat/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="35" column="34" lean-forward="true" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/ArcGIS10.6/Lib/site-packages/pandas/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="21" column="15" lean-forward="true" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/1764415539/itertools.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="83" column="6" selection-start-line="83" selection-start-column="6" selection-end-line="83" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/knickpoints.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-297">
-          <caret line="170" column="4" selection-start-line="170" selection-start-column="4" selection-end-line="170" selection-end-column="4" />
-          <folding>
-            <element signature="e#436#445#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/1764415539/unicodedata.py" />
+    <entry file="file://$PROJECT_DIR$/../Python27/ArcGIS10.6/Lib/site-packages/pandas/compat/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/../Python27/ArcGIS10.6/Lib/site-packages/pandas/__init__.py" />
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/1764415539/itertools.py" />
     <entry file="file://$PROJECT_DIR$/source/make_agree_dem.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -634,27 +593,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Program Files (x86)/ESRI/WaterUtils/ArcHydro/bin/ArcHydroTools.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="8063" column="73" lean-forward="true" selection-start-line="8063" selection-start-column="73" selection-end-line="8063" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/ArcGIS10.6/Lib/subprocess.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="329" column="8" selection-start-line="329" selection-start-column="8" selection-end-line="329" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files (x86)/ArcGIS/Desktop10.6/arcpy/arcpy/_mapping.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="847" column="8" selection-start-line="847" selection-start-column="8" selection-end-line="847" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../Python27/ArcGIS10.6/Lib/subprocess.py" />
+    <entry file="file://$PROJECT_DIR$/../Program Files (x86)/ArcGIS/Desktop10.6/arcpy/arcpy/_mapping.py" />
     <entry file="file://$PROJECT_DIR$/source/mcad_functions.py" />
     <entry file="file://$PROJECT_DIR$/source/batch_points.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -666,13 +606,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Program Files (x86)/ArcGIS/Desktop10.6/arcpy/arcpy/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="1096" column="4" selection-start-line="1096" selection-start-column="4" selection-end-line="1096" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../Program Files (x86)/ArcGIS/Desktop10.6/arcpy/arcpy/__init__.py" />
     <entry file="file://$PROJECT_DIR$/source/hydro_points.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="736">
@@ -690,20 +624,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Program Files (x86)/ArcGIS/Desktop10.6/arcpy/arcpy/conversion.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="2550" selection-start-line="2550" selection-end-line="2550" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files (x86)/ArcGIS/Desktop10.6/arcpy/arcpy/geoprocessing/_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="519" column="62" lean-forward="true" selection-start-line="519" selection-start-column="62" selection-end-line="519" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../Program Files (x86)/ArcGIS/Desktop10.6/arcpy/arcpy/conversion.py" />
+    <entry file="file://$PROJECT_DIR$/../Program Files (x86)/ArcGIS/Desktop10.6/arcpy/arcpy/geoprocessing/_base.py" />
     <entry file="file://$USER_HOME$/.PyCharmCE2018.3/system/python_stubs/1764415539/nt.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="212">
@@ -711,20 +633,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Program Files (x86)/ArcGIS/Desktop10.6/arcpy/arcpy/mapping.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="1832" column="4" selection-start-line="1832" selection-start-column="4" selection-end-line="1832" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/aconditioning_dem.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1728">
-          <caret line="112" column="4" selection-start-line="112" selection-start-column="4" selection-end-line="112" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../Program Files (x86)/ArcGIS/Desktop10.6/arcpy/arcpy/mapping.py" />
     <entry file="file://$PROJECT_DIR$/source/segmentation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -735,27 +644,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Python27/ArcGIS10.6/Lib/site-packages/pandas/io/parsers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="1056" selection-start-line="1056" selection-end-line="1056" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files (x86)/ArcGIS/Desktop10.6/arcpy/arcpy/management.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="3529" selection-start-line="3529" selection-end-line="3529" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files (x86)/ArcGIS/Desktop10.6/arcpy/arcpy/arcobjects/_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../Python27/ArcGIS10.6/Lib/site-packages/pandas/io/parsers.py" />
+    <entry file="file://$PROJECT_DIR$/../Program Files (x86)/ArcGIS/Desktop10.6/arcpy/arcpy/management.py" />
+    <entry file="file://$PROJECT_DIR$/../Program Files (x86)/ArcGIS/Desktop10.6/arcpy/arcpy/arcobjects/_base.py" />
     <entry file="file://$PROJECT_DIR$/source/batch_char.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="640">
@@ -796,86 +687,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/species.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
-          <folding>
-            <element signature="e#24#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/factors.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <element signature="e#24#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/dendritic_conectivity_index.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="832">
-          <caret line="56" column="18" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
-          <folding>
-            <element signature="e#24#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/showing_things.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="30" column="89" selection-start-line="30" selection-start-column="89" selection-end-line="30" selection-end-column="89" />
-          <folding>
-            <element signature="e#24#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/add_attribute.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
-          <folding>
-            <element signature="e#46#68#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/representativity.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="39" column="66" selection-start-line="39" selection-start-column="66" selection-end-line="39" selection-end-column="66" />
-          <folding>
-            <element signature="e#24#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/flores.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="10" selection-start-line="10" selection-end-line="12" selection-end-column="17" />
-          <folding>
-            <element signature="e#24#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/batch_all_UTTL.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="52" column="25" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
-          <folding>
-            <element signature="e#24#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Addin/makeaddin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -885,11 +696,104 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/source/species.py" />
+    <entry file="file://$PROJECT_DIR$/source/factors.py" />
+    <entry file="file://$PROJECT_DIR$/../Program Files (x86)/ArcGIS/Desktop10.3/arcpy/arcpy/arcobjects/_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Program Files (x86)/ESRI/WaterUtils/ArcHydro/bin/ArcHydroTools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="5951" selection-start-line="5951" selection-end-line="5951" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/batch_all_UTTL.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="69" column="41" selection-start-line="69" selection-start-column="41" selection-end-line="69" selection-end-column="41" />
+          <folding>
+            <element signature="e#24#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/aconditioning_dem.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2380">
+          <caret line="144" column="18" selection-start-line="144" selection-start-column="18" selection-end-line="144" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/dendritic_conectivity_index.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
+          <folding>
+            <element signature="e#24#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/showing_things.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="30" column="89" selection-start-line="30" selection-start-column="89" selection-end-line="30" selection-end-column="89" />
+          <folding>
+            <element signature="e#24#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/add_attribute.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
+          <folding>
+            <element signature="e#46#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/representativity.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1785">
+          <caret line="111" column="42" selection-start-line="111" selection-start-column="42" selection-end-line="111" selection-end-column="42" />
+          <folding>
+            <element signature="e#24#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/flores.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#24#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/knickpoints.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="75" column="75" selection-start-line="75" selection-start-column="75" selection-end-line="75" selection-end-column="75" />
+          <folding>
+            <element signature="e#436#445#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SECOND">
-          <first_editor relative-caret-position="128">
-            <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="102">
+            <caret line="6" column="14" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
           </first_editor>
           <second_editor />
         </state>
