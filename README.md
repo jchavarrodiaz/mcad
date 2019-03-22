@@ -1,20 +1,22 @@
 # Estimación de Factores de Compensación en Ecosistemas de Agua Dulce 
 
-## Install
+## Instalación
 
-1. For installing toolbox copy **_MCAD.tbx_** and folder **_Scripts_** to this location:
-
+1. Para la instalación de la caja de herramientas copie el archivo **_MCAD.tbx_** y la carpeta **_source_** a la siguente ubicación:
     "C:\program files (x86)\arcgis\desktop10.x\ArcToolbox\Toolboxes\"
 
-2. For installing Addin, go to folder **_Addin_** and double click in file **Addin.esriaddin** and proceed with installation (No disponible)
+2. Para la instalación del Add-ins, vaya a la carpeta **_Add-ins_** y haga doble click en el archivo **Addin.esriaddin** y proceda con la instalación (**No disponible todavía**)
 
-## Version 0.1
+## Version 0.1.2
 
 **Version de lanzamiento**
-- Desarrollo del manual de factores de compensacion para ecosistemas de agua dulce en ArcGis 10.3 o superiores
+- Desarrollo del manual de factores de compensacion para ecosistemas de agua dulce en ArcGis 10.4 o superiores
 
 **Requerimientos**
-- ArcGis 10.2 o superior
-- SAGA GIS 6.4. o superior
+- ArcGis 10.4 o superior
+- SAGA GIS 6.4. o superior (Instalar la carpeta en el directorio raíz del S.O.)
 - Registrar como variable de entorno la ruta a la carpeta de SAGA GIS
+- Se requiere ArcHydroTools correspondiente a la versión del ArcGis disponible en http://downloads.esri.com/archydro/archydro/Setup
+- Configurar el punto y la coma como simbolo decimal y separador de listas respectivamente.
+- Se recomienda que la información que alimenta la herramienta se encuentre en el directorio raíz (por ejemplo. C:\\)
 

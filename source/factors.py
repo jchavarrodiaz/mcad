@@ -32,19 +32,33 @@ def compensation_factors(uttl, factors):
     arcpy.CalculateField_management(uttl, 'Factores', expression, 'PYTHON_9.3', code_block)
 
 
+def tif_export(uttl, name):
+    gdb = os.path.dirname(uttl)
+    cell_size_like = os.path.join(gdb, 'fac')
+    arcpy.FeatureToRaster_conversion(uttl, 'Factores', name, cell_size_like)
+
+
 def main(env):
     arcpy.CheckOutExtension('Spatial')
 
     if env:
         uttl = arcpy.GetParameterAsText(0)
         factors = arcpy.GetParameterAsText(1)
+        make_tif = arcpy.GetParameterAsText(2)
+        tif_name = arcpy.GetParameterAsText(3)
 
         clear_layers()
     else:
         uttl = r'C:\DIRECTOS\results\UTTL.gdb\UTTL_Basins'
         factors = 'Rareza;Reps_Value;sp_value;dci'
+        make_tif = True
+        tif_name = 'factores_compensacion'
 
     compensation_factors(uttl, factors)
+    if make_tif:
+        if arcpy.Exists(os.path.join(os.path.dirname(uttl), tif_name)):
+            arcpy.Delete_management(os.path.dirname(uttl), tif_name)
+        tif_export(uttl, tif_name)
 
 
 if __name__ == '__main__':
