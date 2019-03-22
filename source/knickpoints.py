@@ -71,12 +71,9 @@ def knickpoints_extract(raw_dem, shape_out, drain_network, folder, eq, gdb, epsg
     if not arcpy.Exists(os.path.join(folder, '{}.gdb'.format(gdb), 'SmoothDrain3D')):
         transform_in = gp.Describe(os.path.join(folder, '{}.gdb'.format(gdb), 'SmoothDrain3D_UTM'))
         ref_in = transform_in.SpatialReference
-        arcpy.Project_management(in_dataset=os.path.join(folder, '{}.gdb'.format(gdb), 'SmoothDrain3D_UTM'),
-                                 out_dataset=os.path.join(folder, '{}.gdb'.format(gdb), 'SmoothDrain3D'),
-                                 out_coor_system=epsg,
-                                 transform_method="",
-                                 in_coor_system=ref_in,
-                                 preserve_shape="NO_PRESERVE_SHAPE", max_deviation="", vertical="NO_VERTICAL")
+        arcpy.Project_management(os.path.join(folder, '{}.gdb'.format(gdb), 'SmoothDrain3D_UTM'),
+                                 os.path.join(folder, '{}.gdb'.format(gdb), 'SmoothDrain3D'),
+                                 epsg, "", ref_in, "NO_PRESERVE_SHAPE", "")
 
     # Identify geometry field
     describe_lyr = gp.Describe(os.path.join(folder, '{}.gdb'.format(gdb), 'SmoothDrain3D'))
@@ -216,4 +213,4 @@ def main(env):
 
 
 if __name__ == '__main__':
-    main(env=False)
+    main(env=True)
