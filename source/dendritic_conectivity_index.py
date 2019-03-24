@@ -44,17 +44,16 @@ def main(env):
     arcpy.CheckOutExtension('Spatial')
 
     if env:
-        gdb_path = arcpy.GetParameterAsText(0)
+        uttl = arcpy.GetParameterAsText(0)
         fdr_path = arcpy.GetParameterAsText(1)
-        uttl = arcpy.GetParameterAsText(2)
-        dci_output = arcpy.GetParameterAsText(3)
+        dci_output = arcpy.GetParameterAsText(2)
+        clear_layers()
     else:
-        gdb_path = r'C:\DIRECTOS\results\UTTL.gdb'
-        fdr_path = r'C:\DIRECTOS\results\UTTL.gdb\fdr'
         uttl = r'C:\DIRECTOS\results\UTTL.gdb\UTTL_Basins'
+        fdr_path = r'C:\DIRECTOS\results\UTTL.gdb\fdr'
         dci_output = 'dci'
 
-    clear_layers()
+    gdb_path = os.path.dirname(uttl)
     dci(fdr_path, dci_output, gdb_path, uttl)
 
 

@@ -110,6 +110,7 @@ def main(env):
         zh_raster = arcpy.GetParameterAsText(3)
         epsg = arcpy.GetParameterAsText(4)
         config_file = arcpy.GetParameterAsText(5)
+        clear_layers()
     else:
         gdb_path = r'C:\DIRECTOS\results\UTTL.gdb'
         uttl = r'C:\DIRECTOS\results\UTTL.gdb\UTTL_Basins'
@@ -118,7 +119,6 @@ def main(env):
         epsg = 3116
         config_file = r'C:\MCAD\development\data\config_criteria.xlsx'
 
-    clear_layers()
     save_mxd(os.path.join(os.path.dirname(gdb_path), 'temp'), 'Factores')
     rareness(gdb_path, uttl, int(ah), zh_raster, epsg, config_file)
 

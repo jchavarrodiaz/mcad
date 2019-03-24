@@ -2,26 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca60032c-5cf9-4feb-9e17-c8547ec341d9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/MCAD.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MCAD.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Addin/Addin.esriaddin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Addin/Images/Beechie.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Addin/Images/EPSG_LOCATION.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Addin/Images/Flores_small.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Addin/Images/NODOS_HIDROLOGICOS.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Addin/Images/NODOS_TOPOGRAFICOS.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Addin/Images/dci.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Addin/Images/dci_.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Addin/Images/dci__.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Addin/Images/factores_compensacion.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Addin/Images/species.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Addin/Install/Addin_addin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Addin/README.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Addin/config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Addin/makeaddin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documento_Instalacion.odt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Instruccion_Instalacion.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Instruccion_Instalacion.pdf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/MCAD.tbx" beforeDir="false" afterPath="$PROJECT_DIR$/MCAD.tbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MCAD_10.3.tbx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/~$finitions.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/factors.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/factors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/dendritic_conectivity_index.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/dendritic_conectivity_index.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/rareness.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/rareness.py" afterDir="false" />
     </list>
     <ignored path=".idea/" />
     <ignored mask="*.pyc" />
@@ -37,38 +28,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SECOND">
-              <first_editor relative-caret-position="304">
-                <caret line="19" selection-start-line="19" selection-end-line="19" />
+              <first_editor relative-caret-position="352">
+                <caret line="22" column="74" selection-start-line="22" selection-start-column="74" selection-end-line="22" selection-end-column="74" />
               </first_editor>
               <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Add-ins/makeaddin.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="20" column="70" selection-start-line="20" selection-start-column="70" selection-end-line="20" selection-end-column="70" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Add-ins/Install/Addin_addin.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
-              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -122,20 +89,20 @@
         <option value="$PROJECT_DIR$/source/flores.py" />
         <option value="$PROJECT_DIR$/source/cluster.py" />
         <option value="$PROJECT_DIR$/source/batch_char.py" />
-        <option value="$PROJECT_DIR$/source/rareness.py" />
         <option value="$PROJECT_DIR$/source/utilities.py" />
         <option value="$PROJECT_DIR$/source/representativity.py" />
         <option value="$PROJECT_DIR$/source/species.py" />
-        <option value="$PROJECT_DIR$/source/dendritic_conectivity_index.py" />
         <option value="$PROJECT_DIR$/source/factors.py" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/Add-ins/makeaddin.py" />
         <option value="$PROJECT_DIR$/Add-ins/Install/Addin_addin.py" />
+        <option value="$PROJECT_DIR$/source/rareness.py" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/source/dendritic_conectivity_index.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="55" />
+    <option name="x" value="1304" />
     <option name="width" value="1263" />
     <option name="height" value="1087" />
   </component>
@@ -193,28 +160,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.species">
-    <configuration name="aconditioning_dem" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="MCAD" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/aconditioning_dem.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.dendritic_conectivity_index">
     <configuration name="add_attribute" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MCAD" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -228,6 +174,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/add_attribute.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="dendritic_conectivity_index" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MCAD" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/dendritic_conectivity_index.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -302,17 +269,17 @@
     <list>
       <item itemvalue="Python.add_attribute" />
       <item itemvalue="Python.representativity" />
-      <item itemvalue="Python.aconditioning_dem" />
       <item itemvalue="Python.species" />
       <item itemvalue="Python.utilities" />
+      <item itemvalue="Python.dendritic_conectivity_index" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.dendritic_conectivity_index" />
         <item itemvalue="Python.species" />
         <item itemvalue="Python.utilities" />
         <item itemvalue="Python.add_attribute" />
         <item itemvalue="Python.representativity" />
-        <item itemvalue="Python.aconditioning_dem" />
       </list>
     </recent_temporary>
   </component>
@@ -339,9 +306,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="55" y="0" width="1263" height="1087" extended-state="0" />
+    <frame x="1304" y="0" width="1263" height="1087" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48442534" visible="true" weight="0.18952619" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48442534" weight="0.19617623" />
       <window_info id="Structure" order="1" sideWeight="0.51557463" side_tool="true" weight="0.17539485" />
       <window_info id="Favorites" order="2" sideWeight="0.5119306" side_tool="true" weight="0.10969793" />
       <window_info id="TODO" order="3" sideWeight="0.4927235" weight="0.14506927" />
@@ -357,7 +325,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Python Console" order="3" sideWeight="0.48336798" side_tool="true" weight="0.41116545" />
-      <window_info anchor="right" id="Terminal" order="4" sideWeight="0.516632" weight="0.41064006" />
+      <window_info anchor="right" id="Terminal" order="4" sideWeight="0.516632" weight="0.5170407" />
     </layout>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -415,7 +383,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/source/knickpoints.py</url>
-          <line>109</line>
+          <line>106</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -425,7 +393,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/source/aconditioning_dem.py</url>
-          <line>151</line>
+          <line>144</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -481,6 +449,11 @@
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
+        <expression-string>os.path.dirname(uttl)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>df_spe.copy()[['sp_mean', 'sp_value', 'sp_class']]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
@@ -517,11 +490,6 @@
       </expression>
       <expression>
         <expression-string>df_spe['sp_mean'].fillna(value=0, inplace=True)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>df_spe['sp_mean'].fillna(value=0)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -686,29 +654,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Program Files (x86)/ArcGIS/Desktop10.6/arcpy/arcpy/arcobjects/_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/batch_char.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="640">
           <caret line="47" column="18" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
           <folding>
             <element signature="e#24#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/rareness.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1376">
-          <caret line="91" column="33" selection-start-line="91" selection-start-column="33" selection-end-line="91" selection-end-column="33" />
-          <folding>
-            <element signature="e#24#33#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -733,15 +684,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Addin/makeaddin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Addin/makeaddin.py" />
     <entry file="file://$PROJECT_DIR$/source/species.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="640">
@@ -766,42 +709,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SECOND">
-          <first_editor relative-caret-position="304">
-            <caret line="19" selection-start-line="19" selection-end-line="19" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/dendritic_conectivity_index.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="832">
-          <caret line="56" column="18" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
-          <folding>
-            <element signature="e#24#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/showing_things.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="453">
           <caret line="30" column="89" selection-start-line="30" selection-start-column="89" selection-end-line="30" selection-end-column="89" />
           <folding>
             <element signature="e#24#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/add_attribute.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
-          <folding>
-            <element signature="e#46#68#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -843,12 +756,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/factors.py">
+    <entry file="file://$PROJECT_DIR$/Add-ins/Install/Addin_addin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="707">
-          <caret line="60" column="34" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
+        <state relative-caret-position="496">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
           <folding>
-            <element signature="e#24#33#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -863,13 +776,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Add-ins/Install/Addin_addin.py">
+    <entry file="file://$PROJECT_DIR$/source/rareness.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+        <state relative-caret-position="247">
+          <caret line="46" column="75" lean-forward="true" selection-start-line="46" selection-start-column="75" selection-end-line="46" selection-end-column="75" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#24#33#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/factors.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="707">
+          <caret line="60" column="34" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
+          <folding>
+            <element signature="e#24#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files (x86)/ArcGIS/Desktop10.6/arcpy/arcpy/arcobjects/_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/dendritic_conectivity_index.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="519">
+          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
+          <folding>
+            <element signature="e#24#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/add_attribute.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1407">
+          <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
+          <folding>
+            <element signature="e#46#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SECOND">
+          <first_editor relative-caret-position="352">
+            <caret line="22" column="74" selection-start-line="22" selection-start-column="74" selection-end-line="22" selection-end-column="74" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
